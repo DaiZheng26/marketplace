@@ -7,7 +7,7 @@
                         <a href="{{ route("adminHome") }}"><i class="fa fa-cog"></i> {{trans('frontLang.dashboard')}}
                         </a>
                     </strong>
-                    @if($WebmasterSettings->languages_count ==2)
+                    <!-- @if($WebmasterSettings->languages_count ==2)
                         &nbsp; | &nbsp;
                         <strong>
                             @if(trans('backLang.code')=="ar")
@@ -21,7 +21,7 @@
                             @endif
 
                         </strong>
-                    @endif
+                    @endif -->
                 </div>
                 <div class="pull-left">
                     @if(Helper::GeneralSiteSettings("contact_t3") !="")

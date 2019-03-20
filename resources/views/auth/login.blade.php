@@ -12,7 +12,9 @@
             <div class="pull-center">
                 <div>
                     <a class="navbar-brand"><img src="{{ URL::to('backEnd/assets/images/logo.png') }}" alt="."> <span
-                                class="hidden-folded inline">{{ trans('backLang.control') }}</span></a>
+                                class="hidden-folded inline">Mr-Supply</span></a>
+                    <!-- <a class="navbar-brand"><img src="{{ URL::to('backEnd/assets/images/logo.png') }}" alt="."> <span
+                    class="hidden-folded inline">{{ trans('backLang.control') }}</span></a> -->
                 </div>
             </div>
         </div>

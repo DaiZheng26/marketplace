@@ -84,8 +84,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="home-row-head">
-                            <h2 class="heading">{{ trans('frontLang.homeContents1Title') }}</h2>
-                            <small>{{ trans('frontLang.homeContents1desc') }}</small>
+                            <h2 class="heading">Our Services</h2>
+                            <!-- <h2 class="heading">{{ trans('frontLang.homeContents1Title') }}</h2> -->
+                            <small> The our services from our blog, you can browse more</small>
+                            <!-- <small>{{ trans('frontLang.homeContents1desc') }}</small> -->
                         </div>
                         <div class="row">
                             <?php
