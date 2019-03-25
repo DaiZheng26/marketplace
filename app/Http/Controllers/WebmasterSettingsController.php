@@ -76,12 +76,14 @@ class WebmasterSettingsController extends Controller
         $WebmasterSetting = WebmasterSetting::find($id);
         if (count($WebmasterSetting) > 0) {
             $WebmasterSetting->ar_box_status = $request->ar_box_status;
+            $WebmasterSetting->gr_box_status = $request->gr_box_status;
             $WebmasterSetting->en_box_status = $request->en_box_status;
             $WebmasterSetting->seo_status = $request->seo_status;
             $WebmasterSetting->analytics_status = $request->analytics_status;
             $WebmasterSetting->banners_status = $request->banners_status;
             $WebmasterSetting->inbox_status = $request->inbox_status;
             $WebmasterSetting->calendar_status = $request->calendar_status;
+            $WebmasterSetting->calendgr_status = $request->calendgr_status;
             $WebmasterSetting->settings_status = $request->settings_status;
             $WebmasterSetting->newsletter_status = $request->newsletter_status;
             $WebmasterSetting->members_status =  0; //$request->orders_status;

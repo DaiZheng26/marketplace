@@ -94,8 +94,10 @@ class BannersController extends Controller
         $this->validate($request, [
             'file2_ar' => 'mimes:mp4,ogv,webm',
             'file2_en' => 'mimes:mp4,ogv,webm',
+            'file2_gr' => 'mimes:mp4,ogv,webm',
             'file_ar' => 'mimes:png,jpeg,jpg,gif|max:3000',
-            'file_en' => 'mimes:png,jpeg,jpg,gif|max:3000'
+            'file_en' => 'mimes:png,jpeg,jpg,gif|max:3000',
+            'file_gr' => 'mimes:png,jpeg,jpg,gif|max:3000'
         ]);
 
 
@@ -115,6 +117,14 @@ class BannersController extends Controller
             $path = $this->getUploadPath();
             $request->file($formFileName)->move($path, $fileFinalName_ar);
         }
+        $formFileName = "file_gr";
+        $fileFinalName_gr = "";
+        if ($request->$formFileName != "") {
+            $fileFinalName_gr = time() . rand(1111,
+                    9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+            $path = $this->getUploadPath();
+            $request->file($formFileName)->move($path, $fileFinalName_gr);
+        }
         $formFileName = "file_en";
         $fileFinalName_en = "";
         if ($request->$formFileName != "") {
@@ -133,6 +143,16 @@ class BannersController extends Controller
                 $request->file($formFileName)->move($path, $fileFinalName_ar);
             }
         }
+        if ($fileFinalName_gr == "") {
+            $formFileName = "file2_gr";
+            $fileFinalName_ar = "";
+            if ($request->$formFileName != "") {
+                $fileFinalName_gr = time() . rand(1111,
+                        9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+                $path = $this->getUploadPath();
+                $request->file($formFileName)->move($path, $fileFinalName_gr);
+            }
+        }
         if ($fileFinalName_en == "") {
             $formFileName = "file2_en";
             $fileFinalName_en = "";
@@ -149,11 +169,14 @@ class BannersController extends Controller
         $Banner->row_no = $next_nor_no;
         $Banner->section_id = $request->section_id;
         $Banner->title_ar = $request->title_ar;
+        $Banner->title_gr = $request->title_gr;
         $Banner->title_en = $request->title_en;
         $Banner->details_ar = $request->details_ar;
+        $Banner->details_gr = $request->details_gr;
         $Banner->details_en = $request->details_en;
         $Banner->code = $request->code;
         $Banner->file_ar = $fileFinalName_ar;
+        $Banner->file_gr = $fileFinalName_gr;
         $Banner->file_en = $fileFinalName_en;
         $Banner->icon = $request->icon;
         $Banner->video_type = $request->video_type;
@@ -234,7 +257,9 @@ class BannersController extends Controller
             $this->validate($request, [
                 'file2_ar' => 'mimes:mp4,ogv,webm',
                 'file2_en' => 'mimes:mp4,ogv,webm',
+                'file2_gr' => 'mimes:mp4,ogv,webm',
                 'file_ar' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                'file_gr' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'file_en' => 'mimes:png,jpeg,jpg,gif|max:3000'
             ]);
 
@@ -248,6 +273,16 @@ class BannersController extends Controller
                 $path = $this->getUploadPath();
                 $request->file($formFileName)->move($path, $fileFinalName_ar);
             }
+
+            $formFileName = "file_gr";
+            $fileFinalName_gr = "";
+            if ($request->$formFileName != "") {
+                $fileFinalName_gr = time() . rand(1111,
+                        9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+                $path = $this->getUploadPath();
+                $request->file($formFileName)->move($path, $fileFinalName_gr);
+            }
+
             $formFileName = "file_en";
             $fileFinalName_en = "";
             if ($request->$formFileName != "") {
@@ -266,6 +301,16 @@ class BannersController extends Controller
                     $request->file($formFileName)->move($path, $fileFinalName_ar);
                 }
             }
+            if ($fileFinalName_gr == "") {
+                $formFileName = "file2_gr";
+                $fileFinalName_gr = "";
+                if ($request->$formFileName != "") {
+                    $fileFinalName_gr = time() . rand(1111,
+                            9999) . '.' . $request->file($formFileName)->getClientOriginalExtension();
+                    $path = $this->getUploadPath();
+                    $request->file($formFileName)->move($path, $fileFinalName_gr);
+                }
+            }
             if ($fileFinalName_en == "") {
                 $formFileName = "file2_en";
                 $fileFinalName_en = "";
@@ -280,8 +325,10 @@ class BannersController extends Controller
 
             $Banner->section_id = $request->section_id;
             $Banner->title_ar = $request->title_ar;
+            $Banner->title_gr = $request->title_gr;
             $Banner->title_en = $request->title_en;
             $Banner->details_ar = $request->details_ar;
+            $Banner->details_gr = $request->details_gr;
             $Banner->details_en = $request->details_en;
             $Banner->code = $request->code;
 
@@ -289,6 +336,14 @@ class BannersController extends Controller
                 // Delete a banner file
                 if ($Banner->file_ar != "") {
                     File::delete($this->getUploadPath() . $Banner->file_ar);
+                }
+
+                $Banner->file_ar = $fileFinalName_ar;
+            }
+            if ($fileFinalName_gr != "") {
+                // Delete a banner file
+                if ($Banner->file_gr != "") {
+                    File::delete($this->getUploadPath() . $Banner->file_gr);
                 }
 
                 $Banner->file_ar = $fileFinalName_ar;
@@ -338,6 +393,9 @@ class BannersController extends Controller
             // Delete a banner file
             if ($Banner->file_ar != "") {
                 File::delete($this->getUploadPath() . $Banner->file_ar);
+            }
+            if ($Banner->file_gr != "") {
+                File::delete($this->getUploadPath() . $Banner->file_gr);
             }
             if ($Banner->file_en != "") {
                 File::delete($this->getUploadPath() . $Banner->file_en);
@@ -389,6 +447,9 @@ class BannersController extends Controller
             foreach ($Banners as $banner) {
                 if ($banner->file_ar != "") {
                     File::delete($this->getUploadPath() . $banner->file_ar);
+                }
+                if ($banner->file_gr != "") {
+                    File::delete($this->getUploadPath() . $banner->file_gr);
                 }
                 if ($banner->file_en != "") {
                     File::delete($this->getUploadPath() . $banner->file_en);

@@ -50,14 +50,14 @@
 
                 </div>
 
-                @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                     <div class="form-group row">
-                        <label for="title_ar"
+                        <label for="title_gr"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.sectionTitle') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                         </label>
                         <div class="col-sm-10">
-                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                            {!! Form::text('title_gr','', array('placeholder' => '','class' => 'form-control','id'=>'title_gr','required'=>'', 'dir'=>trans('backLang.ltl'))) !!}
                         </div>
                     </div>
                 @endif

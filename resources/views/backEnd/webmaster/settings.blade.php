@@ -64,7 +64,7 @@
                 <label><h5><i class="material-icons">&#xe8a4;</i> {{ trans('backLang.fieldsSettings') }}</h5></label>
                 <hr>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>{{ trans('backLang.arabicLanguageFields') }} : </label>
                 <div class="radio">
                     <label class="ui-check ui-check-md">
@@ -75,6 +75,22 @@
                     &nbsp; &nbsp;
                     <label class="ui-check ui-check-md">
                         {!! Form::radio('ar_box_status','0',$WebmasterSetting->ar_box_status ? false : true , array('id' => 'ar_box_status2','class'=>'has-value')) !!}
+                        <i class="dark-white"></i>
+                        {{ trans('backLang.notActive') }}
+                    </label>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label>{{ trans('backLang.greeceLanguageFields') }} : </label>
+                <div class="radio">
+                    <label class="ui-check ui-check-md">
+                        {!! Form::radio('gr_box_status','1',$WebmasterSetting->gr_box_status ? true : false , array('id' => 'gr_box_status1','class'=>'has-value')) !!}
+                        <i class="dark-white"></i>
+                        {{ trans('backLang.active') }}
+                    </label>
+                    &nbsp; &nbsp;
+                    <label class="ui-check ui-check-md">
+                        {!! Form::radio('gr_box_status','0',$WebmasterSetting->gr_box_status ? false : true , array('id' => 'gr_box_status2','class'=>'has-value')) !!}
                         <i class="dark-white"></i>
                         {{ trans('backLang.notActive') }}
                     </label>

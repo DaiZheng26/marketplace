@@ -84,10 +84,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="home-row-head">
-                            <h2 class="heading">Our Services</h2>
-                            <!-- <h2 class="heading">{{ trans('frontLang.homeContents1Title') }}</h2> -->
-                            <small> The our services from our blog, you can browse more</small>
-                            <!-- <small>{{ trans('frontLang.homeContents1desc') }}</small> -->
+                            <!-- <h2 class="heading">Our Services</h2> -->
+                            <h2 class="heading">{{ trans('frontLang.homeContents1Title') }}</h2>
+                            <!-- <small> The our services from our blog, you can browse more</small> -->
+                            <small>{{ trans('frontLang.homeContents1desc') }}</small>
                         </div>
                         <div class="row">
                             <?php
@@ -352,10 +352,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="home-row-head">
-                            <!-- <h2 class="heading">{{ trans('frontLang.homeContents2Title') }}</h2> -->
-                            <h2 class="heading">Fresh Vegetable</h2>
-                            <!-- <small>{{ trans('frontLang.homeContents2desc') }}</small> -->
-                            <small>Some of our Fresh vegetable, you can browse more</small>
+                            <h2 class="heading">{{ trans('frontLang.homeContents2Title') }}</h2>
+                            <!-- <h2 class="heading">Fresh Vegetable</h2> -->
+                            <small>{{ trans('frontLang.homeContents2desc') }}</small>
+                            <!-- <small>Some of our Fresh vegetable, you can browse more</small> -->
                         </div>
                         <div class="row">
                             <section id="projects">

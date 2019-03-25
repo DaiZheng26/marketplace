@@ -22,6 +22,21 @@
 
                         </strong>
                     @endif -->
+                     @if($WebmasterSettings->languages_count ==2)
+                    &nbsp; | &nbsp;
+                        <strong>
+                            @if(trans('backLang.code')=="gr")
+                                <a href="{{ URL::to('lang/en') }}"><i
+                                            class="fa fa-language "></i> {{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.englishBox')))) }}
+                                </a>
+                            @else
+                                <a href="{{ URL::to('lang/gr') }}"><i
+                                            class="fa fa-language "></i> {{ str_replace("[ ","",str_replace(" ]","",strip_tags(trans('backLang.greeceBox')))) }}
+                                </a>
+                            @endif
+
+                        </strong>
+                    @endif
                 </div>
                 <div class="pull-left">
                     @if(Helper::GeneralSiteSettings("contact_t3") !="")

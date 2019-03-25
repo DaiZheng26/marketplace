@@ -108,7 +108,7 @@ if (Helper::GeneralSiteSettings("style_footer") != 1) {
                         $slug_var = "seo_url_slug_" . trans('backLang.boxCode');
                         $slug_var2 = "seo_url_slug_" . trans('backLang.boxCodeOther');
                         ?>
-                        <h4 class="widgetheading"><i class="fa fa-bookmark"></i>&nbsp; {{$$main_title_var}}</h4>
+                        <h4 class="widgetheading"><i class="fa fa-bookmark"></i>&nbsp; {{$main_title_var}}</h4>
                         <ul class="link-list">
                             @foreach($FooterMenuLinks as $FooterMenuLink)
                                 @if($FooterMenuLink->type==3 || $FooterMenuLink->type==2)

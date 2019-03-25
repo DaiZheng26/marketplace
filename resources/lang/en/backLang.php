@@ -10,12 +10,14 @@ return [
     'right' => 'right',
     'arabicBox' => '<small>[ العربية ]</small>',
     'englishBox' => '<small>[ English ]</small>',
+    'greeceBox' => '<small>[ Greece ]</small>',
     'rtl' => 'rtl',
     'ltr' => 'ltr',
     'boxCode' => 'en',
     'boxCodeOther' => 'ar',
     'translations' => 'Translations',
     'calendarLanguage' => 'en',
+
 
 
     // Main Menu & General Titles
@@ -107,6 +109,7 @@ return [
     'frontSettings' => 'Frontend Settings',
     'arabicLanguageFields' => 'Arabic language fields',
     'englishLanguageFields' => 'English language fields',
+    'greeceLanguageFields' => 'Greece language fields',
     'seoTab' => 'SEO Tab',
     'seoTabTitle' => 'SEO Settings',
     'defaultCurrency' => 'Default currency',

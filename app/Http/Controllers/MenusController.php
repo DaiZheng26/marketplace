@@ -100,6 +100,7 @@ class MenusController extends Controller
         }
         $Menu->father_id = $father;
         $Menu->title_ar = $request->title_ar;
+        $Menu->title_gr = $request->title_gr;
         $Menu->title_en = $request->title_en;
         $Menu->type = $request->type;
         $Menu->link = $request->link;
@@ -133,6 +134,7 @@ class MenusController extends Controller
         $Menu->row_no = $next_nor_no;
         $Menu->father_id = 0;
         $Menu->title_ar = $request->title_ar;
+        $Menu->title_gr = $request->title_gr;
         $Menu->title_en = $request->title_en;
         $Menu->created_by =  Auth::user()->id;
         $Menu->status = 1;
@@ -205,6 +207,7 @@ class MenusController extends Controller
 
             $Menu->father_id = $request->father_id;
             $Menu->title_ar = $request->title_ar;
+            $Menu->title_gr = $request->title_gr;
             $Menu->title_en = $request->title_en;
             $Menu->type = $request->type;
             $Menu->link = $request->link;
@@ -234,6 +237,7 @@ class MenusController extends Controller
         $Menu = Menu::find($id);
         if (count($Menu) > 0) {
             $Menu->title_ar = $request->title_ar;
+            $Menu->title_gr = $request->title_gr;
             $Menu->title_en = $request->title_en;
             $Menu->updated_by =  Auth::user()->id;
             $Menu->save();

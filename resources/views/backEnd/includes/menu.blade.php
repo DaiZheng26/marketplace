@@ -38,7 +38,7 @@ $urlAfterRoot = substr($fullPagePath, strpos($fullPagePath, env('BACKEND_PATH'))
                             <span class="nav-icon">
                                 <i class="fa fa-user">	</i>
                             </span>
-                            <span class="nav-text">Users</span>
+                            <span class="nav-text">{{ trans('backLang.users') }}</span>
                         </a>
                     </li>
 

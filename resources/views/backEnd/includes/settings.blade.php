@@ -43,7 +43,7 @@
             </div>
             <br>
 
-            @if(Helper::GeneralWebmasterSettings("ar_box_status") || Helper::GeneralWebmasterSettings("en_box_status"))
+            <!-- @if(Helper::GeneralWebmasterSettings("ar_box_status") || Helper::GeneralWebmasterSettings("en_box_status"))
                 <p>{{ trans('backLang.language') }}:</p>
 
                 {{Form::open(['route'=>'lang','method'=>'post'])}}
@@ -64,7 +64,26 @@
                 </div>
 
                 {{Form::close()}}
-            @endif
+            @endif -->
+            
+                 <p>{{ trans('backLang.language') }}:</p>
+
+                {{Form::open(['route'=>'lang','method'=>'post'])}}
+
+                <div class="form-group">
+                                {!!
+                    Form::select('locale', array(
+                     'en'=>'English',
+                    'gr'=>'Greece'),App::getLocale(),array('id' => 'locale','class' => 'form-control','required' => ''))
+                    !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::submit(trans('backLang.change'), array('class' => 'btn btn-success btn-sm')) !!}
+                </div>
+
+                {{Form::close()}}
+             
         </div>
     </div>
 

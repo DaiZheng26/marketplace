@@ -10,6 +10,7 @@ return [
     'right' => 'left',
     'arabicBox' => '<small>[ العربية ]</small>',
     'englishBox' => '<small>[ English ]</small>',
+    'greeceBox' => '<small>[ Greece ]</small>',
     'rtl' => 'rtl',
     'ltr' => 'ltr',
     'boxCode' => 'ar',
