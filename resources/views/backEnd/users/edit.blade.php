@@ -51,6 +51,31 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="bname"
+                           class="col-sm-2 form-control-label">Name(Business or Store)
+                    </label>
+                    <div class="col-sm-10">
+                        {!! Form::text('bname',$Users->bname, array('placeholder' => '','class' => 'form-control','id'=>'bname','required'=>'')) !!}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phonenumber"
+                           class="col-sm-2 form-control-label">Phone Number
+                    </label>
+                    <div class="col-sm-10">
+                        {!! Form::text('email',$Users->phonenumber, array('placeholder' => '','class' => 'form-control','id'=>'phonenumber','required'=>'')) !!}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="vat"
+                           class="col-sm-2 form-control-label">Vat Number
+                    </label>
+                    <div class="col-sm-10">
+                        {!! Form::text('email',$Users->vat, array('placeholder' => '','class' => 'form-control','id'=>'vat','required'=>'')) !!}
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="photo_file"
                            class="col-sm-2 form-control-label">{!!  trans('backLang.topicPhoto') !!}</label>
                     <div class="col-sm-10">

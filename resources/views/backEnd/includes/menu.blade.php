@@ -33,7 +33,14 @@ $urlAfterRoot = substr($fullPagePath, strpos($fullPagePath, env('BACKEND_PATH'))
                             <span class="nav-text">{{ trans('backLang.dashboard') }}</span>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="{{route('users')}}">
+                            <span class="nav-icon">
+                                <i class="fa fa-user">	</i>
+                            </span>
+                            <span class="nav-text">Users</span>
+                        </a>
+                    </li>
 
                     @if(Helper::GeneralWebmasterSettings("analytics_status"))
                         @if(@Auth::user()->permissionsGroup->analytics_status)

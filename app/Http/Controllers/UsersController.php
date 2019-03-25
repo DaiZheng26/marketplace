@@ -106,6 +106,9 @@ class UsersController extends Controller
         $User->connect_email = $request->connect_email;
         $User->connect_password = $request->connect_password;
         $User->status = 1;
+        $User->vat = $request->vat;
+        $User->phonenumber = $request->phonenumber;
+        $User->bname = $request->bname;
         $User->created_by = Auth::user()->id;
         $User->save();
 
@@ -213,7 +216,9 @@ class UsersController extends Controller
             if ($request->connect_password != "") {
                 $User->connect_password = $request->connect_password;
             }
-
+            $User->vat = $request->vat;
+            $User->phonenumber = $request->phonenumber;
+            $User->bname = $request->bname;
             $User->status = $request->status;
             $User->updated_by = Auth::user()->id;
             $User->save();
