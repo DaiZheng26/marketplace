@@ -69,6 +69,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'status' => true,
+            'bname' => $data['bname'],
+            'phonenumber' => $data['phonenumber'],
+            'vat' => $data['vat'],
             'permissions_id' => Helper::GeneralWebmasterSettings("permission_group"),    // Permission Group ID
             'password' => bcrypt($data['password']),
         ]);

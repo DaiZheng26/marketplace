@@ -20,6 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('photo')->nullable();
             $table->integer('permissions_id')->nullable();
+            $table->integer('bname')->nullable();
+            $table->integer('vat')->nullable();
+            $table->integer('phonenumber')->nullable();
             $table->tinyInteger('status');
             $table->string('connect_email')->nullable();
             $table->string('connect_password')->nullable();

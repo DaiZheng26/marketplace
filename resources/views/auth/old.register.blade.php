@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@if(Helper::GeneralWebmasterSettings("register_status"))
+        <!DOCTYPE html>
 <html lang="{{ trans('backLang.code') }}" dir="{{ trans('backLang.direction') }}">
 <head>
     @include('backEnd.includes.head')
@@ -43,7 +44,7 @@
                            autofocus>
                     <label>{{ trans('backLang.fullName') }}</label>
                 </div>
-                <div class="md-form-group" >
+                <div class="md-form-group">
                     <input id="email" type="email" class="md-input" name="email" value="{{ old('email') }}" required>
 
                     <label>{{ trans('backLang.connectEmail') }}</label>
@@ -55,19 +56,6 @@
                 <div class="md-form-group">
                     <input id="password-confirm" type="password" class="md-input" name="password_confirmation" required>
                     <label>{{ trans('backLang.confirmPassword') }}</label>
-                </div>
-
-                <div class="md-form-group">
-                    <input id="business-name" type="text" class="md-input" name="bname"  >
-                    <label>Name of Business(Store)</label>
-                </div>
-                <div class="md-form-group">
-                    <input id="phonenumber" type="text" class="md-input" name="phonenumber"  >
-                    <label>Phone Number</label>
-                </div>
-                <div class="md-form-group">
-                    <input id="vat-number" type="text" class="md-input" name="vat">
-                    <label>Vat Number</label>
                 </div>
 
                 <button type="submit" class="btn primary btn-block p-x-md"><i
@@ -89,5 +77,9 @@
 @include('backEnd.includes.foot')
 </body>
 </html>
- 
+@else
+    <script>
+        window.location.href = '{{url("/login")}}';
+    </script>
+@endif
 

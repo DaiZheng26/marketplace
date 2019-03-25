@@ -25,8 +25,16 @@ Route::get('/lang/{lang}', array(
 // .. End of Language Route
 
 
+
+ 
+
 // Backend Routes
 Auth::routes();
+Route::get('/register',function(){
+    return view('auth.register');
+    // echo "123";
+})->name('register');
+
 
 // default path after login
 Route::get('/admin', function () {

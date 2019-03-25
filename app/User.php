@@ -32,6 +32,9 @@ class User extends Authenticatable
         'permissions',
         'connect_email',
         'connect_password',
+        'bname',
+        'vat',
+        'phonenumber',
     ];
 
     /**

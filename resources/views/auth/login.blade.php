@@ -50,14 +50,12 @@
                 </div>
                 <button type="submit" class="btn primary btn-block p-x-md">{{ trans('backLang.signIn') }}</button>
             </form>
-            @if(Helper::GeneralWebmasterSettings("register_status"))
-                <br>
+                 <br>
                 <div class="text-center">
                     <a href="{{ url('/register') }}" class="btn info btn-block p-x-md"><i class="material-icons">&#xe7fe;</i> {{ trans('backLang.createNewAccount') }}
                     </a>
                 </div>
-            @endif
-        </div>
+         </div>
 
         <div class="p-v-lg text-center">
             <div class="m-b"><a href="{{ url('/password/reset') }}"
