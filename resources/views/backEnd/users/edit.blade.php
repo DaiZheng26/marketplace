@@ -63,7 +63,7 @@
                            class="col-sm-2 form-control-label">{!! trans('backLang.phonenumber') !!}
                     </label>
                     <div class="col-sm-10">
-                        {!! Form::text('email',$Users->phonenumber, array('placeholder' => '','class' => 'form-control','id'=>'phonenumber','required'=>'')) !!}
+                        {!! Form::text('phonenumber',$Users->phonenumber, array('placeholder' => '','class' => 'form-control','id'=>'phonenumber','required'=>'')) !!}
                     </div>
                 </div>
                 <div class="form-group row">
@@ -71,7 +71,7 @@
                            class="col-sm-2 form-control-label">{!! trans('backLang.vat') !!}
                     </label>
                     <div class="col-sm-10">
-                        {!! Form::text('email',$Users->vat, array('placeholder' => '','class' => 'form-control','id'=>'vat','required'=>'')) !!}
+                        {!! Form::text('vat',$Users->vat, array('placeholder' => '','class' => 'form-control','id'=>'vat','required'=>'')) !!}
                     </div>
                 </div>
 
