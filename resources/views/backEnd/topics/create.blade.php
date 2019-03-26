@@ -139,14 +139,14 @@
                     {!! Form::hidden('section_id','0') !!}
                 @endif
 
-                @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                     <div class="form-group row">
-                        <label for="title_ar"
+                        <label for="title_gr"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                         </label>
                         <div class="col-sm-10">
-                            {!! Form::text('title_ar','', array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                            {!! Form::text('title_gr','', array('placeholder' => '','class' => 'form-control','id'=>'title_gr','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
                         </div>
                     </div>
                 @endif
@@ -154,7 +154,7 @@
                     <div class="form-group row">
                         <label for="title_en"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.topicName') !!}
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
                         </label>
                         <div class="col-sm-10">
                             {!! Form::text('title_en','', array('placeholder' => '','class' => 'form-control','id'=>'title_en','required'=>'', 'dir'=>trans('backLang.ltr'))) !!}
@@ -165,15 +165,15 @@
                 @if($WebmasterSection->longtext_status)
 
                     @if($WebmasterSection->editor_status)
-                        @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                        @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                             <div class="form-group row">
-                                <label for="details_ar"
+                                <label for="details_gr"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                 </label>
                                 <div class="col-sm-10">
                                     <div class="box p-a-xs">
-                                        {!! Form::textarea('details_ar','<div dir=rtl><br></div>', array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote', 'dir'=>trans('backLang.rtl'),'ui-options'=>'{height: 300}')) !!}
+                                        {!! Form::textarea('details_gr','<div dir=rtl><br></div>', array('ui-jp'=>'summernote','placeholder' => '','class' => 'form-control summernote', 'dir'=>trans('backLang.ltr'),'ui-options'=>'{height: 300}')) !!}
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
                             <div class="form-group row">
                                 <label for="details_en"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
                                 </label>
                                 <div class="col-sm-10">
                                     <div class="box p-a-xs">
@@ -192,14 +192,14 @@
                             </div>
                         @endif
                     @else
-                        @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                        @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                             <div class="form-group row">
-                                <label for="details_ar"
+                                <label for="details_gr"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                 </label>
                                 <div class="col-sm-10">
-                                    {!! Form::textarea('details_ar','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.rtl'),'rows'=>'5')) !!}
+                                    {!! Form::textarea('details_gr','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
                                 </div>
                             </div>
                         @endif
@@ -207,7 +207,7 @@
                             <div class="form-group row">
                                 <label for="details_en"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.bannerDetails') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.englishBox') !!}@endif
                                 </label>
                                 <div class="col-sm-10">
                                     {!! Form::textarea('details_en','', array('placeholder' => '','class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'5')) !!}
@@ -377,14 +377,14 @@
                         $cf_land_identifier = "";
                         $cf_land_active = false;
                         $cf_land_dir = trans('backLang.direction');
-                        if (Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")) {
-                            if ($customField->lang_code == "ar") {
-                                $cf_land_identifier = trans('backLang.arabicBox');
+                        if (Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")) {
+                            if ($customField->lang_code == "gr") {
+                                $cf_land_identifier = trans('backLang.greeceBox');
                             } elseif ($customField->lang_code == "en") {
                                 $cf_land_identifier = trans('backLang.englishBox');
                             }
                         }
-                        if (Helper::GeneralWebmasterSettings("ar_box_status") && $customField->lang_code == "ar") {
+                        if (Helper::GeneralWebmasterSettings("gr_box_status") && $customField->lang_code == "gr") {
                             $cf_land_active = true;
                             $cf_land_dir = "rtl";
                         }

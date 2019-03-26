@@ -116,6 +116,7 @@ class SectionsController extends Controller
         $Section = new Section;
         $Section->row_no = $next_nor_no;
         $Section->title_ar = $request->title_ar;
+        $Section->title_gr = $request->title_gr;
         $Section->title_en = $request->title_en;
         $Section->icon = $request->icon;
         if ($fileFinalName != "") {
@@ -130,11 +131,13 @@ class SectionsController extends Controller
 
         // Meta title
         $Section->seo_title_ar = $request->title_ar;
+        $Section->seo_title_gr = $request->title_gr;
         $Section->seo_title_en = $request->title_en;
 
         //URL Slugs
-        $slugs = Helper::URLSlug($request->title_ar, $request->title_en, "category", 0);
+        $slugs = Helper::URLSlug($request->title_ar, $request->title_en,  $request->title_gr, "category", 0);
         $Section->seo_url_slug_ar = $slugs['slug_ar'];
+        $Section->seo_url_slug_gr = $slugs['slug_gr'];
         $Section->seo_url_slug_en = $slugs['slug_en'];
 
 
@@ -224,6 +227,7 @@ class SectionsController extends Controller
             // End of Upload Files
 
             $Section->title_ar = $request->title_ar;
+            $Section->title_gr = $request->title_gr;
             $Section->title_en = $request->title_en;
             $Section->icon = $request->icon;
             if ($request->photo_delete == 1) {
@@ -256,16 +260,20 @@ class SectionsController extends Controller
         if (count($Section) > 0) {
 
             $Section->seo_title_ar = $request->seo_title_ar;
+            $Section->seo_title_gr = $request->seo_title_gr;
             $Section->seo_title_en = $request->seo_title_en;
             $Section->seo_description_ar = $request->seo_description_ar;
+            $Section->seo_description_gr = $request->seo_description_gr;
             $Section->seo_description_en = $request->seo_description_en;
             $Section->seo_keywords_ar = $request->seo_keywords_ar;
+            $Section->seo_keywords_gr = $request->seo_keywords_gr;
             $Section->seo_keywords_en = $request->seo_keywords_en;
             $Section->updated_by = Auth::user()->id;
 
             //URL Slugs
-            $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "category", $id);
+            $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_gr, $request->seo_url_slug_en, "category", $id);
             $Section->seo_url_slug_ar = $slugs['slug_ar'];
+            $Section->seo_url_slug_gr = $slugs['slug_gr'];
             $Section->seo_url_slug_en = $slugs['slug_en'];
 
             $Section->save();

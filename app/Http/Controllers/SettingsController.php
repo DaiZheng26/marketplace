@@ -69,10 +69,13 @@ class SettingsController extends Controller
         if (count($Setting) > 0) {
 
             $Setting->site_title_ar = $request->site_title_ar;
+            $Setting->site_title_gr = $request->site_title_gr;
             $Setting->site_title_en = $request->site_title_en;
             $Setting->site_desc_ar = $request->site_desc_ar;
+            $Setting->site_desc_gr = $request->site_desc_gr;
             $Setting->site_desc_en = $request->site_desc_en;
             $Setting->site_keywords_ar = $request->site_keywords_ar;
+            $Setting->site_keywords_gr = $request->site_keywords_gr;
             $Setting->site_keywords_en = $request->site_keywords_en;
             $Setting->site_webmails = $request->site_webmails;
             $Setting->notify_messages_status = $request->notify_messages_status;
@@ -118,6 +121,7 @@ class SettingsController extends Controller
             $this->validate($request, [
                 'style_logo_en' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_logo_ar' => 'mimes:png,jpeg,jpg,gif|max:3000',
+                'style_logo_gr' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_fav' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_apple' => 'mimes:png,jpeg,jpg,gif|max:3000',
                 'style_bg_image' => 'mimes:png,jpeg,jpg,gif|max:5000',
@@ -149,6 +153,20 @@ class SettingsController extends Controller
                         9999) . '.' . $request->file($formFileNameAr)->getClientOriginalExtension();
                 $path = $this->getUploadPath();
                 $request->file($formFileNameAr)->move($path, $fileFinalNameAr);
+            }
+
+            $formFileNameGr = "style_logo_gr";
+            $fileFinalNameGr = "";
+            if ($request->$formFileNameGr != "") {
+                // Delete a style_logo_gr photo
+                if ($Setting->style_logo_gr != "") {
+                    File::delete($this->getUploadPath() . $Setting->style_logo_gr);
+                }
+
+                $fileFinalNameGr = time() . rand(1111,
+                        9999) . '.' . $request->file($formFileNameGr)->getClientOriginalExtension();
+                $path = $this->getUploadPath();
+                $request->file($formFileNameGr)->move($path, $fileFinalNameGr);
             }
 
             $formFileName2 = "style_fav";
@@ -218,6 +236,9 @@ class SettingsController extends Controller
 
             if ($fileFinalNameAr != "") {
                 $Setting->style_logo_ar = $fileFinalNameAr;
+            }
+            if ($fileFinalNameGr != "") {
+                $Setting->style_logo_ar = $fileFinalNameGr;
             }
             if ($fileFinalName2 != "") {
                 $Setting->style_fav = $fileFinalName2;
@@ -313,12 +334,14 @@ class SettingsController extends Controller
         if (count($Setting) > 0) {
 
             $Setting->contact_t1_ar = $request->contact_t1_ar;
+            $Setting->contact_t1_gr = $request->contact_t1_Ar;
             $Setting->contact_t1_en = $request->contact_t1_en;
             $Setting->contact_t3 = $request->contact_t3;
             $Setting->contact_t4 = $request->contact_t4;
             $Setting->contact_t5 = $request->contact_t5;
             $Setting->contact_t6 = $request->contact_t6;
             $Setting->contact_t7_ar = $request->contact_t7_ar;
+            $Setting->contact_t7_gr = $request->contact_t7_gr;
             $Setting->contact_t7_en = $request->contact_t7_en;
             $Setting->updated_by = Auth::user()->id;
             $Setting->save();

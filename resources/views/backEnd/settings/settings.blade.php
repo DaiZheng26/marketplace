@@ -48,12 +48,12 @@
                         <div class="p-a-md dker _600"><i class="material-icons">&#xe30c;</i>
                             &nbsp; {!!  trans('backLang.siteInfoSettings') !!}</div>
                         <div class="p-a-md col-md-12">
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                 <div class="form-group">
                                     <label>{!!  trans('backLang.websiteTitle') !!}
-                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                        @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                     </label>
-                                    {!! Form::text('site_title_ar',$Setting->site_title_ar, array('placeholder' => trans('backLang.websiteTitle'),'class' => 'form-control', 'dir'=>trans('backLang.rtl'))) !!}
+                                    {!! Form::text('site_title_gr',$Setting->site_title_gr, array('placeholder' => trans('backLang.websiteTitle'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             @endif
                             @if(Helper::GeneralWebmasterSettings("en_box_status"))
@@ -64,12 +64,12 @@
                                     {!! Form::text('site_title_en',$Setting->site_title_en, array('placeholder' => trans('backLang.websiteTitle'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             @endif
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                 <div class="form-group">
                                     <label>{!!  trans('backLang.metaDescription') !!}
-                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                        @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                     </label>
-                                    {!! Form::textarea('site_desc_ar',$Setting->site_desc_ar, array('placeholder' => trans('backLang.metaDescription'),'class' => 'form-control', 'dir'=>trans('backLang.rtl'),'rows'=>'2')) !!}
+                                    {!! Form::textarea('site_desc_gr',$Setting->site_desc_gr, array('placeholder' => trans('backLang.metaDescription'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                 </div>
                             @endif
                             @if(Helper::GeneralWebmasterSettings("en_box_status"))
@@ -80,12 +80,12 @@
                                     {!! Form::textarea('site_desc_en',$Setting->site_desc_en, array('placeholder' => trans('backLang.metaDescription'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                 </div>
                             @endif
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                 <div class="form-group">
                                     <label>{!!  trans('backLang.metaKeywords') !!}
-                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                        @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                     </label>
-                                    {!! Form::textarea('site_keywords_ar',$Setting->site_keywords_ar, array('placeholder' => trans('backLang.metaKeywords'),'class' => 'form-control', 'dir'=>trans('backLang.rtl'),'rows'=>'2')) !!}
+                                    {!! Form::textarea('site_keywords_gr',$Setting->site_keywords_gr, array('placeholder' => trans('backLang.metaKeywords'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'),'rows'=>'2')) !!}
                                 </div>
                             @endif
                             @if(Helper::GeneralWebmasterSettings("en_box_status"))
@@ -164,12 +164,12 @@
                         <div class="p-a-md dker _600"><i class="material-icons">&#xe0ba;</i>
                             &nbsp; {!!  trans('backLang.siteContactsSettings') !!}</div>
                         <div class="p-a-md col-md-12">
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                 <div class="form-group">
                                     <label>{!!  trans('backLang.contactAddress') !!}
-                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                        @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                     </label>
-                                    {!! Form::text('contact_t1_ar',$Setting->contact_t1_ar, array('placeholder' => trans('backLang.contactAddress'),'class' => 'form-control', 'dir'=>trans('backLang.rtl'))) !!}
+                                    {!! Form::text('contact_t1_gr',$Setting->contact_t1_gr, array('placeholder' => trans('backLang.contactAddress'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             @endif
                             @if(Helper::GeneralWebmasterSettings("en_box_status"))
@@ -196,12 +196,12 @@
                                 <label>{!!  trans('backLang.contactEmail') !!}</label>
                                 {!! Form::text('contact_t6',$Setting->contact_t6, array('placeholder' => trans('backLang.contactEmail'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'))) !!}
                             </div>
-                            @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                            @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                 <div class="form-group">
                                     <label>{!!  trans('backLang.worksTime') !!}
-                                        @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                        @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                     </label>
-                                    {!! Form::text('contact_t7_ar',$Setting->contact_t7_ar, array('placeholder' => trans('backLang.worksTime'),'class' => 'form-control', 'dir'=>trans('backLang.rtl'))) !!}
+                                    {!! Form::text('contact_t7_gr',$Setting->contact_t7_gr, array('placeholder' => trans('backLang.worksTime'),'class' => 'form-control', 'dir'=>trans('backLang.ltr'))) !!}
                                 </div>
                             @endif
                             @if(Helper::GeneralWebmasterSettings("en_box_status"))
@@ -320,20 +320,20 @@
                         <div class="p-a-md col-md-12">
 
                             <div class="form-group row">
-                                @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                                @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                     <div class="col-sm-6">
-                                        <label for="style_logo_ar">{!!  trans('backLang.siteLogo') !!} @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif</label>
-                                        @if($Setting->style_logo_ar!="")
+                                        <label for="style_logo_gr">{!!  trans('backLang.siteLogo') !!} @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif</label>
+                                        @if($Setting->style_logo_gr!="")
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="col-sm-12 box p-a-xs text-center">
                                                         <a target="_blank"
-                                                           href="{{ URL::to('uploads/settings/'.$Setting->style_logo_ar) }}"><img
-                                                                    src="{{ URL::to('uploads/settings/'.$Setting->style_logo_ar) }}"
-                                                                    class="img-responsive" id="style_logo_ar_prv"
+                                                           href="{{ URL::to('uploads/settings/'.$Setting->style_logo_gr) }}"><img
+                                                                    src="{{ URL::to('uploads/settings/'.$Setting->style_logo_gr) }}"
+                                                                    class="img-responsive" id="style_logo_gr_prv"
                                                                     style="width: auto;max-width: 260px;max-height: 60px">
                                                             <br>
-                                                            <small>{{ $Setting->style_logo_ar }}</small>
+                                                            <small>{{ $Setting->style_logo_gr }}</small>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -344,7 +344,7 @@
                                                     <div class="col-sm-12 box p-a-xs text-center">
                                                         <img
                                                                 src="{{ URL::to('uploads/settings/nologo.png') }}"
-                                                                class="img-responsive" id="style_logo_ar_prv"
+                                                                class="img-responsive" id="style_logo_gr_prv"
                                                                 style="width: auto;max-width: 260px;max-height: 60px">
                                                         <br>
                                                         <small>nologo.png</small>
@@ -353,7 +353,7 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        {!! Form::file('style_logo_ar', array('class' => 'form-control','id'=>'style_logo_ar','accept'=>'image/*')) !!}
+                                        {!! Form::file('style_logo_gr', array('class' => 'form-control','id'=>'style_logo_gr','accept'=>'image/*')) !!}
                                         <small>
                                             <i class="material-icons">&#xe8fd;</i>( 260x60 px ) -
                                             {!!  trans('backLang.imagesTypes') !!}
@@ -817,8 +817,8 @@
             }
         }
 
-        $("#style_logo_ar").change(function () {
-            readURL(this, "style_logo_ar_prv");
+        $("#style_logo_gr").change(function () {
+            readURL(this, "style_logo_gr_prv");
         });
 
         $("#style_logo_en").change(function () {

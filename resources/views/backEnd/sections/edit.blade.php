@@ -90,14 +90,14 @@
                             {!! Form::hidden('father_id',$Sections->father_id) !!}
                         @endif
 
-                        @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                        @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                             <div class="form-group row">
-                                <label for="title_ar"
+                                <label for="title_gr"
                                        class="col-sm-2 form-control-label">{!!  trans('backLang.sectionName') !!}
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.arabicBox') !!}@endif
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status")){!!  trans('backLang.greeceBox') !!}@endif
                                 </label>
                                 <div class="col-sm-10">
-                                    {!! Form::text('title_ar',$Sections->title_ar, array('placeholder' => '','class' => 'form-control','id'=>'title_ar','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
+                                    {!! Form::text('title_gr',$Sections->title_gr, array('placeholder' => '','class' => 'form-control','id'=>'title_gr','required'=>'', 'dir'=>trans('backLang.rtl'))) !!}
                                 </div>
                             </div>
                         @endif
@@ -208,19 +208,19 @@
                             {{Form::open(['route'=>['sectionsSEOUpdate',"webmasterId"=>$WebmasterSection->id,"id"=>$Sections->id],'method'=>'POST'])}}
                             <div class="row">
                                 <div class="col-sm-6">
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.topicSEOTitle') !!}</small>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
+                                                @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
                                                     <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
 
-                                                {!! Form::text('seo_title_ar',$Sections->seo_title_ar, array('class' => 'form-control','id'=>'seo_title_ar','maxlength'=>'65', 'dir'=>trans('backLang.rtl'))) !!}
+                                                {!! Form::text('seo_title_gr',$Sections->seo_title_ar, array('class' => 'form-control','id'=>'seo_title_gr','maxlength'=>'65', 'dir'=>trans('backLang.ltr'))) !!}
                                             </div>
                                         </div>
                                     @endif
 
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                         <div class="form-group">
                                             <div>
                                                 <small>{!!  trans('backLang.friendlyURL') !!}</small>
@@ -260,32 +260,32 @@
                                 </div>
                                 <div class="col-sm-6">
 
-                                    @if(Helper::GeneralWebmasterSettings("ar_box_status"))
+                                    @if(Helper::GeneralWebmasterSettings("gr_box_status"))
                                         <?php
                                         $seo_example_title = $Sections->title_ar;
-                                        $seo_example_desc = Helper::GeneralSiteSettings("site_desc_ar");
-                                        if ($Sections->seo_title_ar != "") {
-                                            $seo_example_title = $Sections->seo_title_ar;
+                                        $seo_example_desc = Helper::GeneralSiteSettings("site_desc_gr");
+                                        if ($Sections->seo_title_gr != "") {
+                                            $seo_example_title = $Sections->seo_title_gr;
                                         }
-                                        if ($Sections->seo_description_ar != "") {
-                                            $seo_example_desc = $Sections->seo_description_ar;
+                                        if ($Sections->seo_description_gr != "") {
+                                            $seo_example_desc = $Sections->seo_description_gr;
                                         }
-                                        if ($Sections->seo_url_slug_ar != "" && Helper::GeneralWebmasterSettings("links_status")) {
-                                            $seo_example_url = url($Sections->seo_url_slug_ar);
+                                        if ($Sections->seo_url_slug_gr != "" && Helper::GeneralWebmasterSettings("links_status")) {
+                                            $seo_example_url = url($Sections->seo_url_slug_gr);
                                         } else {
                                             $seo_example_url = route('FrontendTopicsByCat', ["section" => $Sections->webmasterSection->name, "cat" => $Sections->id]);
                                         }
                                         ?>
                                         <div class="form-group">
                                             <div>
-                                                @if(Helper::GeneralWebmasterSettings("ar_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
-                                                    <small>{!!  trans('backLang.arabicBox') !!}</small> @endif
+                                                @if(Helper::GeneralWebmasterSettings("gr_box_status") && Helper::GeneralWebmasterSettings("en_box_status"))
+                                                    <small>{!!  trans('backLang.greeceBox') !!}</small> @endif
                                                 &nbsp;
                                                 <div class="search-example" dir="rtl">
-                                                    <a id="title_in_engines_ar" href="{{ $seo_example_url }}"
+                                                    <a id="title_in_engines_gr" href="{{ $seo_example_url }}"
                                                        target="_blank">{{ $seo_example_title }}</a>
-                                                    <span id="url_in_engines_ar">{{ $seo_example_url }}</span>
-                                                    <div id="desc_in_engines_ar">{{ $seo_example_desc }} ...</div>
+                                                    <span id="url_in_engines_gr">{{ $seo_example_url }}</span>
+                                                    <div id="desc_in_engines_gr">{{ $seo_example_desc }} ...</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -442,23 +442,23 @@
         @if(Helper::GeneralWebmasterSettings("ar_box_status"))
         $("#seo_title_ar").on('keyup change', function () {
             if ($(this).val() != "") {
-                $("#title_in_engines_ar").text($(this).val());
+                $("#title_in_engines_gr").text($(this).val());
             } else {
-                $("#title_in_engines_ar").text("<?php echo $Sections->title_ar; ?>");
+                $("#title_in_engines_gr").text("<?php echo $Sections->title_gr; ?>");
             }
         });
         $("#seo_description_ar").on('keyup change', function () {
             if ($(this).val() != "") {
-                $("#desc_in_engines_ar").text($(this).val());
+                $("#desc_in_engines_gr").text($(this).val());
             } else {
-                $("#desc_in_engines_ar").text("<?php echo Helper::GeneralSiteSettings("site_desc_ar"); ?>");
+                $("#desc_in_engines_gr").text("<?php echo Helper::GeneralSiteSettings("site_desc_gr"); ?>");
             }
         });
         $("#seo_url_slug_ar").on('keyup change', function () {
             if ($(this).val() != "") {
-                $("#url_in_engines_ar").text("<?php echo url(''); ?>/" + slugify($(this).val()));
+                $("#url_in_engines_gr").text("<?php echo url(''); ?>/" + slugify($(this).val()));
             } else {
-                $("#url_in_engines_ar").text("<?php echo route('FrontendTopicsByCat', ["section" => $Sections->webmasterSection->name, "cat" => $Sections->id]); ?>");
+                $("#url_in_engines_gr").text("<?php echo route('FrontendTopicsByCat', ["section" => $Sections->webmasterSection->name, "cat" => $Sections->id]); ?>");
             }
         });
         @endif

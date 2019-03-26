@@ -177,9 +177,11 @@ class TopicsController extends Controller
             // Save topic details
             $Topic->row_no = $next_nor_no;
             $Topic->title_ar = $request->title_ar;
+            $Topic->title_gr = $request->title_gr;
             $Topic->title_en = $request->title_en;
 
             $Topic->details_ar = $request->details_ar;
+            $Topic->details_gr = $request->details_gr;
             $Topic->details_en = $request->details_en;
             $Topic->date = $request->date;
             if (@$request->expire_date != "") {
@@ -206,15 +208,18 @@ class TopicsController extends Controller
 
             // Meta title
             $Topic->seo_title_ar = $request->title_ar;
+            $Topic->seo_title_gr = $request->title_gr;
             $Topic->seo_title_en = $request->title_en;
 
             // URL Slugs
-            $slugs = Helper::URLSlug($request->title_ar, $request->title_en, "topic", 0);
+            $slugs = Helper::URLSlug($request->title_ar, $request->title_gr, $request->title_en, "topic", 0);
             $Topic->seo_url_slug_ar = $slugs['slug_ar'];
+            $Topic->seo_url_slug_gr = $slugs['slug_gr'];
             $Topic->seo_url_slug_en = $slugs['slug_en'];
 
             // Meta Description
             $Topic->seo_description_ar = mb_substr(strip_tags(stripslashes($request->details_ar)), 0, 165, 'UTF-8');
+            $Topic->seo_description_gr = mb_substr(strip_tags(stripslashes($request->details_gr)), 0, 165, 'UTF-8');
             $Topic->seo_description_en = mb_substr(strip_tags(stripslashes($request->details_en)), 0, 165, 'UTF-8');
 
 
@@ -414,8 +419,10 @@ class TopicsController extends Controller
                 // End of Upload Files
 
                 $Topic->title_ar = $request->title_ar;
+                $Topic->title_gr = $request->title_gr;
                 $Topic->title_en = $request->title_en;
                 $Topic->details_ar = $request->details_ar;
+                $Topic->details_gr = $request->details_gr;
                 $Topic->details_en = $request->details_en;
                 $Topic->date = $request->date;
                 if (@$request->expire_date != "" || $Topic->date != "") {
@@ -731,16 +738,20 @@ class TopicsController extends Controller
             if (count($Topic) > 0) {
 
                 $Topic->seo_title_ar = $request->seo_title_ar;
+                $Topic->seo_title_gr = $request->seo_title_gr;
                 $Topic->seo_title_en = $request->seo_title_en;
                 $Topic->seo_description_ar = $request->seo_description_ar;
+                $Topic->seo_description_gr = $request->seo_description_gr;
                 $Topic->seo_description_en = $request->seo_description_en;
                 $Topic->seo_keywords_ar = $request->seo_keywords_ar;
+                $Topic->seo_keywords_gr = $request->seo_keywords_gr;
                 $Topic->seo_keywords_en = $request->seo_keywords_en;
                 $Topic->updated_by = Auth::user()->id;
 
                 //URL Slugs
-                $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_en, "topic", $id);
+                $slugs = Helper::URLSlug($request->seo_url_slug_ar, $request->seo_url_slug_gr, $request->seo_url_slug_en, "topic", $id);
                 $Topic->seo_url_slug_ar = $slugs['slug_ar'];
+                $Topic->seo_url_slug_gr = $slugs['slug_gr'];
                 $Topic->seo_url_slug_en = $slugs['slug_en'];
 
                 $Topic->save();
@@ -1214,8 +1225,9 @@ class TopicsController extends Controller
             $Map->longitude = $request->longitude;
             $Map->latitude = $request->latitude;
             $Map->title_ar = $request->title_ar;
+            $Map->title_gr = $request->title_gr;
             $Map->title_en = $request->title_en;
-            $Map->details_ar = $request->details_ar;
+            $Map->details_gr = $request->details_gr;
             $Map->details_en = $request->details_en;
             $Map->icon = $request->icon;
             $Map->topic_id = $id;
@@ -1287,8 +1299,10 @@ class TopicsController extends Controller
                 $Map->longitude = $request->longitude;
                 $Map->latitude = $request->latitude;
                 $Map->title_ar = $request->title_ar;
+                $Map->title_gr = $request->title_gr;
                 $Map->title_en = $request->title_en;
                 $Map->details_ar = $request->details_ar;
+                $Map->details_gr = $request->details_gr;
                 $Map->details_en = $request->details_en;
                 $Map->icon = $request->icon;
                 $Map->status = $request->status;
@@ -1469,6 +1483,7 @@ class TopicsController extends Controller
                 $AttachFile->topic_id = $id;
                 $AttachFile->row_no = $next_nor_no;
                 $AttachFile->title_ar = $request->title_ar;
+                $AttachFile->title_gr = $request->title_gr;
                 $AttachFile->title_en = $request->title_en;
                 $AttachFile->file = $fileFinalName;
                 $AttachFile->created_by = Auth::user()->id;
@@ -1551,6 +1566,7 @@ class TopicsController extends Controller
                 }
 
                 $AttachFile->title_ar = $request->title_ar;
+                $AttachFile->title_gr = $request->title_gr;
                 $AttachFile->title_en = $request->title_en;
                 if ($fileFinalName != "") {
                     $AttachFile->file = $fileFinalName;
