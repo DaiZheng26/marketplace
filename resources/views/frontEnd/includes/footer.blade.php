@@ -104,7 +104,7 @@ if (Helper::GeneralSiteSettings("style_footer") != 1) {
                     <div class="widget">
                         <?php
                         $link_title_var = "title_" . trans('backLang.boxCode');
-                        $main_title_var = "FooterMenuLinks_name_" . trans('backLang.boxCode');
+                        $main_title_var = trans('backLang.footmenu');
                         $slug_var = "seo_url_slug_" . trans('backLang.boxCode');
                         $slug_var2 = "seo_url_slug_" . trans('backLang.boxCodeOther');
                         ?>

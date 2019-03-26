@@ -18,7 +18,11 @@ return [
     'translations' => 'Translations',
     'calendarLanguage' => 'en',
 
-
+    //Customize Language
+    'bname' => 'Name (Business or Store)',
+    'phonenumber' => 'Phone Number',
+    'vat' => 'VAT Number',
+    'footmenu' => 'Footer Menu',
 
     // Main Menu & General Titles
     'home' => 'Home',
