@@ -42,7 +42,7 @@
                 <table class="table table-striped  b-t">
                     <thead>
                     <tr>
-                        <th>{{ trans('backLang.title') }}</th>
+                        <th style="padding-left:3%">{{ trans('backLang.title') }}</th>
                         <th>{{ trans('backLang.permissions') }}</th>
                         <th class="text-center" style="width:50px;">{{ trans('backLang.status') }}</th>
                         <th class="text-center" style="width:200px;">{{ trans('backLang.options') }}</th>
@@ -52,7 +52,7 @@
 
                     @foreach($Permissions as $Permission)
                         <tr>
-                            <td>
+                            <td style="padding-left:3%">
                                 {!! $Permission->name   !!}</td>
                             <td>
                                 <small>

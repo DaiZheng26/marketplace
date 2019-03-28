@@ -23,6 +23,8 @@ return [
     'phonenumber' => 'Phone Number',
     'vat' => 'VAT Number',
     'footmenu' => 'Footer Menu',
+    'buyer' => 'Buyer',
+    'provider' => 'Provider',
 
     // Main Menu & General Titles
     'home' => 'Home',

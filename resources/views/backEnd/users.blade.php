@@ -1,9 +1,7 @@
 @extends('backEnd.layout')
 
 @section('content')
-    @if(@Auth::user()->permissionsGroup->webmaster_status)
-        @include('backEnd.users.permissions.view')
-    @endif
+   
 
     <div class="padding">
         <div class="box">
@@ -207,6 +205,9 @@
             @endif
         </div>
     </div>
+     @if(@Auth::user()->permissionsGroup->webmaster_status)
+        @include('backEnd.users.permissions.view')
+    @endif
 @endsection
 @section('footerInclude')
     <script type="text/javascript">

@@ -38,8 +38,25 @@
                         {{ $errors->first('password') }}
                     </div>
                 @endif
+                @if ($errors->has('permission'))
+                    <div class="alert alert-warning">
+                        {{ $errors->first('permission') }}
+                    </div>
+                @endif
+                <div class="radio" required>
+                    <label class="ui-check ui-check-md" style="margin-bottom: 5px;">
+                        <input type="radio" name="permission" value="4">
+                         <i class="dark-white"></i>
+                        {{ trans('backLang.buyer') }}
+                    </label>
+                     <label class="ui-check ui-check-md" style="margin-bottom: 5px;">
+                        <input type="radio" name="permission" value="5">
+                        <i class="dark-white"></i>
+                        {{ trans('backLang.provider') }}
+                    </label>
+                </div>
                 <div class="md-form-group">
-                    <input id="name" type="text" class="md-input" name="name" value="{{ old('name') }}" required
+                    <input id="name" type="text" class="md-input" name="name" value=" {{ old('name') }}" required
                            autofocus>
                     <label>{{ trans('backLang.fullName') }}</label>
                 </div>
@@ -59,16 +76,17 @@
 
                 <div class="md-form-group">
                     <input id="business-name" type="text" class="md-input" name="bname"  >
-                    <label>Name of Business(Store)</label>
+                    <label>{{trans('backLang.bname')}}</label>
                 </div>
                 <div class="md-form-group">
                     <input id="phonenumber" type="text" class="md-input" name="phonenumber"  >
-                    <label>Phone Number</label>
+                    <label>{{trans('backLang.phonenumber')}}</label>
                 </div>
                 <div class="md-form-group">
                     <input id="vat-number" type="text" class="md-input" name="vat">
-                    <label>Vat Number</label>
+                    <label>{{trans('backLang.vat')}}</label>
                 </div>
+                
 
                 <button type="submit" class="btn primary btn-block p-x-md"><i
                             class="material-icons">&#xe7fe;</i> {{ trans('backLang.createNewAccount') }}</button>

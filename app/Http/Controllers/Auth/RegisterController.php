@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'permission' => 'required',
         ]);
     }
 
@@ -64,7 +65,9 @@ class RegisterController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
+    {   
+         
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -72,7 +75,9 @@ class RegisterController extends Controller
             'bname' => $data['bname'],
             'phonenumber' => $data['phonenumber'],
             'vat' => $data['vat'],
-            'permissions_id' => Helper::GeneralWebmasterSettings("permission_group"),    // Permission Group ID
+            // 'permissions_id' => Helper::GeneralWebmasterSettings("permission_group"),    // Permission Group ID
+            
+            'permissions_id' => $data['permission'],
             'password' => bcrypt($data['password']),
         ]);
     }
