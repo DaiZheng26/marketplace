@@ -98,7 +98,7 @@
 
                                     @else
                                         <video width="100%" height="450" controls autoplay>
-                                            <source src="{{ URL::to('uploads/topics/'.$Topic->video_file) }}"
+                                            <source src="{{ URL::to('public/uploads/topics/'.$Topic->video_file) }}"
                                                     type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -119,12 +119,12 @@
                                     </h1>
                                 </div>
                                 @if($Topic->photo_file !="")
-                                    <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                    <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                          alt="{{ $title }}"/>
                                 @endif
                                 <div>
                                     <audio controls autoplay>
-                                        <source src="{{ URL::to('uploads/topics/'.$Topic->audio_file) }}"
+                                        <source src="{{ URL::to('public/uploads/topics/'.$Topic->audio_file) }}"
                                                 type="audio/mpeg">
                                         Your browser does not support the audio element.
                                     </audio>
@@ -148,13 +148,13 @@
                                     <ul class="slides">
                                         @if($Topic->photo_file !="")
                                             <li>
-                                                <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                                <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                                      alt="{{ $title }}"/>
                                             </li>
                                         @endif
                                         @foreach($Topic->photos as $photo)
                                             <li>
-                                                <img src="{{ URL::to('uploads/topics/'.$photo->file) }}"
+                                                <img src="{{ URL::to('public/uploads/topics/'.$photo->file) }}"
                                                      alt="{{ $photo->title  }}"/>
                                             </li>
                                         @endforeach
@@ -176,7 +176,7 @@
                                     </h1>
                                 </div>
                                 @if($Topic->photo_file !="")
-                                    <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                    <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                          alt="{{ $title }}" title="{{ $title }}"/>
                                 @endif
                             </div>
@@ -265,7 +265,7 @@
                                                         </div>
                                                         <div class="col-lg-9">
                                                             <video width="100%" height="450" controls>
-                                                                <source src="{{ URL::to('uploads/topics/'.$cf_saved_val) }}"
+                                                                <source src="{{ URL::to('public/uploads/topics/'.$cf_saved_val) }}"
                                                                         type="video/mp4">
                                                                 Your browser does not support the video tag.
                                                             </video>
@@ -278,10 +278,10 @@
                                                             {!!  $cf_title !!} :
                                                         </div>
                                                         <div class="col-lg-9">
-                                                            <a href="{{ URL::to('uploads/topics/'.$cf_saved_val) }}"
+                                                            <a href="{{ URL::to('public/uploads/topics/'.$cf_saved_val) }}"
                                                                target="_blank">
                                                                 <span class="badge">
-                                                                    {!! Helper::GetIcon(URL::to('uploads/topics/'),$cf_saved_val) !!}
+                                                                    {!! Helper::GetIcon(URL::to('public/uploads/topics/'),$cf_saved_val) !!}
                                                                     {!! $cf_saved_val !!}</span>
                                                             </a>
                                                         </div>
@@ -293,7 +293,7 @@
                                                             {!!  $cf_title !!} :
                                                         </div>
                                                         <div class="col-lg-9">
-                                                            <img src="{{ URL::to('uploads/topics/'.$cf_saved_val) }}"
+                                                            <img src="{{ URL::to('public/uploads/topics/'.$cf_saved_val) }}"
                                                                  alt="{{ $cf_title }} - {{ $title }}"
                                                                  title="{{ $cf_title }} - {{ $title }}">
                                                         </div>
@@ -436,13 +436,13 @@
                             <div class="bottom-article">
                                 @if($file_ext ==".jpg"|| $file_ext ==".jpeg"|| $file_ext ==".png"|| $file_ext ==".gif")
                                     <div class="text-center">
-                                        <img src="{{ URL::to('uploads/topics/'.$Topic->attach_file) }}"
+                                        <img src="{{ URL::to('public/uploads/topics/'.$Topic->attach_file) }}"
                                              alt="{{ $title }}"/>
                                     </div>
                                 @else
-                                    <a href="{{ URL::to('uploads/topics/'.$Topic->attach_file) }}">
+                                    <a href="{{ URL::to('public/uploads/topics/'.$Topic->attach_file) }}">
                                         <strong>
-                                            {!! Helper::GetIcon(URL::to('uploads/topics/'),$Topic->attach_file) !!}
+                                            {!! Helper::GetIcon(URL::to('public/uploads/topics/'),$Topic->attach_file) !!}
                                             &nbsp;{{ trans('frontLang.downloadAttach') }}</strong>
                                     </a>
                                 @endif
@@ -542,7 +542,7 @@
                                         ?>
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <img src="{{ URL::to('uploads/contacts/profile.jpg') }}" class="profile"
+                                                <img src="{{ URL::to('public/uploads/contacts/profile.jpg') }}" class="profile"
                                                      alt="{{$comment->name}}">
                                                 <div class="pullquote-left">
                                                     <strong>{{$comment->name}}</strong>

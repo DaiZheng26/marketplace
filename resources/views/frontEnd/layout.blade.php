@@ -18,10 +18,10 @@ if (Helper::GeneralSiteSettings("style_type")) {
         $bdy_bg_image = "";
     } elseif (Helper::GeneralSiteSettings("style_bg_type") == 1) {
         $bdy_bg_color = "";
-        $bdy_bg_image = "background-attachment: fixed;background-image:url(" . URL::to('uploads/pattern/' . Helper::GeneralSiteSettings("style_bg_pattern")) . ")";
+        $bdy_bg_image = "background-attachment: fixed;background-image:url(" . URL::to('public/uploads/pattern/' . Helper::GeneralSiteSettings("style_bg_pattern")) . ")";
     } elseif (Helper::GeneralSiteSettings("style_bg_type") == 2) {
         $bdy_bg_color = "";
-        $bdy_bg_image = "background-attachment: fixed;background-image:url(" . URL::to('uploads/settings/' . Helper::GeneralSiteSettings("style_bg_image")) . ")";
+        $bdy_bg_image = "background-attachment: fixed;background-image:url(" . URL::to('public/uploads/settings/' . Helper::GeneralSiteSettings("style_bg_image")) . ")";
     }
 }
 ?>

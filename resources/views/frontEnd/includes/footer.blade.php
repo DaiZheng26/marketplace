@@ -1,7 +1,7 @@
 <?php
 $footer_style = "";
 if (Helper::GeneralSiteSettings("style_footer_bg") != "") {
-    $bg_file = URL::to('uploads/settings/' . Helper::GeneralSiteSettings("style_footer_bg"));
+    $bg_file = URL::to('public/uploads/settings/' . Helper::GeneralSiteSettings("style_footer_bg"));
     $bg_color = Helper::GeneralSiteSettings("style_color1");
     $footer_style = "style='background: $bg_color url($bg_file) repeat-x center top'";
 }

@@ -31,7 +31,7 @@
                 <ul class="slides">
                     @foreach($SliderBanners as $SliderBanner)
                         <li>
-                            <img src="{{ URL::to('uploads/banners/'.$SliderBanner->$file_var) }}"
+                            <img src="{{ URL::to('public/uploads/banners/'.$SliderBanner->$file_var) }}"
                                  alt="{{ $SliderBanner->$title_var }}"/>
                             <div class="flex-caption">
                                 @if($SliderBanner->$details_var !="")
@@ -80,7 +80,7 @@
                         @if($SliderBanner->$file_var !="")
                             {{-- Direct Video --}}
                             <video width="100%" height="500" controls>
-                                <source src="{{ URL::to('uploads/banners/'.$SliderBanner->$file_var) }}"
+                                <source src="{{ URL::to('public/uploads/banners/'.$SliderBanner->$file_var) }}"
                                         type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>

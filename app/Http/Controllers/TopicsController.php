@@ -21,7 +21,7 @@ use Redirect;
 
 class TopicsController extends Controller
 {
-    private $uploadPath = "uploads/topics/";
+    private $uploadPath = "public/uploads/topics/";
 
     // Define Default Variables
 

@@ -61,6 +61,16 @@
         'footmenu' => 'Υποσέλιδο μενού',
         'buyer' => 'αγοραστής',
         'provider' => 'Προμηθευτής',
+        'category' => 'Κατηγορία',
+        'subcategory' => 'Υποκατηγορία',
+        'field' => 'Πεδίο',
+        'newCategory' => 'νέα κατηγορία',
+        'newmainCategory' => 'Νέα κύρια κατηγορία',
+        'maincategory' => 'Κύρια κατηγορία',
+        'title' => 'Τίτλος',
+        'categoryimage' => 'Εικόνα κατηγορίας',
+        'editCategory' => 'Επεξεργασία κατηγορίας',
+        'deleteCategory' => 'Διαγραφή κατηγορίας',
 
         // General
         'logout' => 'Αποσύνδεση',

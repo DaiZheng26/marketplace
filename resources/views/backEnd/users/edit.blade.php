@@ -113,6 +113,7 @@
                 </div>
 
                 @if(@Auth::user()->permissionsGroup->webmaster_status)
+                
                     <div class="form-group row">
                         <label for="permissions1"
                                class="col-sm-2 form-control-label">{!!  trans('backLang.Permission') !!}</label>

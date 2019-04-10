@@ -126,7 +126,7 @@
                                 <div class="col-lg-12">
                                     <a href="{{ $topic_link_url }}">
                                         @if($TopicMostViewed->photo_file !="")
-                                            <img src="{{ URL::to('uploads/topics/'.$TopicMostViewed->photo_file) }}"
+                                            <img src="{{ URL::to('public/uploads/topics/'.$TopicMostViewed->photo_file) }}"
                                                  class="pull-left" alt="{{ $side_title }}"/>
                                         @elseif($TopicMostViewed->webmasterSection->type==2 && $TopicMostViewed->video_file!="")
                                             @if($Topic->video_type ==1)
@@ -202,7 +202,7 @@
                                         @if($SideBanner->link_url !="")
                                             <a href="{!! $SideBanner->link_url !!}">
                                                 @endif
-                                                <img src="{{ URL::to('uploads/banners/'.$SideBanner->$file_var) }}"
+                                                <img src="{{ URL::to('public/uploads/banners/'.$SideBanner->$file_var) }}"
                                                      alt="{{ $SideBanner->$title_var }}"/>
                                                 @if($SideBanner->link_url !="")
                                             </a>
@@ -245,7 +245,7 @@
                                         @if($SideBanner->$file_var !="")
                                             {{-- Direct Video --}}
                                             <video width="100%" height="500" controls>
-                                                <source src="{{ URL::to('uploads/banners/'.$SideBanner->$file_var) }}"
+                                                <source src="{{ URL::to('public/uploads/banners/'.$SideBanner->$file_var) }}"
                                                         type="video/mp4">
                                                 Your browser does not support the video tag.
                                             </video>

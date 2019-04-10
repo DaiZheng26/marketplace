@@ -14,7 +14,7 @@ class SettingsController extends Controller
 {
     // Define Default Settings ID
     private $id = 1;
-    private $uploadPath = "uploads/settings/";
+    private $uploadPath = "public/uploads/settings/";
 
     public function __construct()
     {

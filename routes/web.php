@@ -11,6 +11,11 @@
 |
 */
 
+use App\Category;
+use App\Subcategory;
+
+use App\WebmasterSection;
+  
 
 // Language Route
 Route::post('/lang', array(
@@ -255,7 +260,29 @@ Route::Group(['prefix' => env('BACKEND_PATH')], function () {
     Route::post('/users/permissions/{id}/update', 'UsersController@permissions_update')->name('permissionsUpdate');
     Route::get('/users/permissions/destroy/{id}', 'UsersController@permissions_destroy')->name('permissionsDestroy');
 
+    // Category 
+    Route::get('/categories', 'CategoriesController@index')->name('categories');
+    Route::get('/categories/create/', 'CategoriesController@create')->name('categoriesCreate');
+    Route::post('/categories/store', 'CategoriesController@store')->name('categoriesStore');
+    Route::get('/categories/{id}/edit', 'CategoriesController@edit')->name('categoriesEdit');
+    Route::post('/categories/{id}/update', 'CategoriesController@update')->name('categoriesUpdate');
+    Route::get('/categories/destroy/{id}', 'CategoriesController@destroy')->name('categoriesDestroy');
+    Route::post('/categories/updateAll', 'CategoriesController@updateAll')->name('categoriesUpdateAll');
+    // SubCategory
+    Route::get('/subcategories', function(){
+        $categories = Category::all();
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
 
+        return View::make('backEnd.subcategory')->with(compact('categories'))->with(compact('GeneralWebmasterSections'));
+    })->name('subcategories');
+
+    Route::get('ajax-subcat', function(){
+        $cat_id = Input::get('cat_id');
+        $subcategories = Subcategory::where('category_id','=',$cat_id)->get();
+        
+        return Response::json($subcategories);
+    });
+    
     // Menus
     Route::post('/menus/store/parent', 'MenusController@storeMenu')->name('parentMenusStore');
     Route::get('/menus/parent/{id}/edit', 'MenusController@editMenu')->name('parentMenusEdit');

@@ -25,7 +25,17 @@ return [
     'footmenu' => 'Footer Menu',
     'buyer' => 'Buyer',
     'provider' => 'Provider',
-
+    'category' => 'Category',
+    'subcategory' => 'SubCategory',
+    'field' => 'Field',
+    'newCategory' => 'New Category',
+    'newmainCategory' => 'New MainCategory',
+    'categoryimage' => 'Category Image',
+    'maincategory' => 'Main Category',
+    'title' => 'Title',
+    'editCategory' => 'Edit Category',
+    'deleteCategory' => 'Delete Category',
+ 
     // Main Menu & General Titles
     'home' => 'Home',
     'main' => 'Main',

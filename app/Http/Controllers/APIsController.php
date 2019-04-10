@@ -207,18 +207,18 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
 
         // Response Details
         $response_details = [
-            'logo' => ($Setting->$style_logo_var != "") ? url("") . "/uploads/settings/" . $Setting->$style_logo_var : null,
-            'fav_icon' => ($Setting->style_fav != "") ? url("") . "/uploads/settings/" . $Setting->style_fav : null,
-            'apple_icon' => ($Setting->style_apple != "") ? url("") . "/uploads/settings/" . $Setting->style_apple : null,
+            'logo' => ($Setting->$style_logo_var != "") ? url("") . "/public/uploads/settings/" . $Setting->$style_logo_var : null,
+            'fav_icon' => ($Setting->style_fav != "") ? url("") . "/public/uploads/settings/" . $Setting->style_fav : null,
+            'apple_icon' => ($Setting->style_apple != "") ? url("") . "/public/uploads/settings/" . $Setting->style_apple : null,
             'style_color_1' => $Setting->style_color1,
             'style_color_2' => $Setting->style_color2,
             'layout_mode' => $Setting->style_type,
             'bg_type' => $Setting->style_bg_type,
-            'bg_pattern' => ($Setting->style_bg_pattern != "") ? url("") . "/uploads/pattern/" . $Setting->style_bg_pattern : null,
+            'bg_pattern' => ($Setting->style_bg_pattern != "") ? url("") . "/public/uploads/pattern/" . $Setting->style_bg_pattern : null,
             'bg_color' => $Setting->style_bg_color,
-            'bg_image' => ($Setting->style_bg_image != "") ? url("") . "/uploads/settings/" . $Setting->style_bg_image : null,
+            'bg_image' => ($Setting->style_bg_image != "") ? url("") . "/public/uploads/settings/" . $Setting->style_bg_image : null,
             'footer_style' => $Setting->style_footer,
-            'footer_bg' => ($Setting->style_footer_bg != "") ? url("") . "/uploads/settings/" . $Setting->style_footer_bg : null,
+            'footer_bg' => ($Setting->style_footer_bg != "") ? url("") . "/public/uploads/settings/" . $Setting->style_footer_bg : null,
             'newsletter_subscribe_status' => $Setting->style_subscribe,
             'preload_status' => $Setting->style_preload
         ];
@@ -414,7 +414,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         'id' => $Banner->id,
                         'title' => $Banner->$title_var,
                         'details' => nl2br($Banner->$details_var),
-                        'file' => ($Banner->$file_var != "") ? url("") . "/uploads/banners/" . $Banner->$file_var : null,
+                        'file' => ($Banner->$file_var != "") ? url("") . "/public/uploads/banners/" . $Banner->$file_var : null,
                         'video_type' => $Banner->video_type,
                         'youtube_link' => $Banner->youtube_link,
                         'link_url' => $Banner->link_url,
@@ -532,7 +532,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'id' => $SubSection->id,
                             'title' => $SubSection->$title_var,
                             'icon' => $SubSection->icon,
-                            'photo' => ($SubSection->photo != "") ? url("") . "/uploads/sections/" . $SubSection->photo : null,
+                            'photo' => ($SubSection->photo != "") ? url("") . "/public/uploads/sections/" . $SubSection->photo : null,
                             'href' => "topics/cat/" . $SubSection->id,
                         ];
                     }
@@ -541,7 +541,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         'id' => $Section->id,
                         'title' => $Section->$title_var,
                         'icon' => $Section->icon,
-                        'photo' => ($Section->photo != "") ? url("") . "/uploads/sections/" . $Section->photo : null,
+                        'photo' => ($Section->photo != "") ? url("") . "/public/uploads/sections/" . $Section->photo : null,
                         'href' => "topics/cat/" . $Section->id,
                         'sub_categories_count' => count($SubSections),
                         'sub_categories' => $sub_response_details
@@ -623,7 +623,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'id' => $category->id,
                             'title' => $category->section->$title_var,
                             'icon' => $category->section->icon,
-                            'photo' => ($category->section->photo != "") ? url("") . "/uploads/sections/" . $category->section->photo : null,
+                            'photo' => ($category->section->photo != "") ? url("") . "/public/uploads/sections/" . $category->section->photo : null,
                             'href' => "topics/cat/" . $category->id
                         ];
                     }
@@ -658,7 +658,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
 
                     $video_file = $Topic->video_file;
                     if ($Topic->video_type == 0) {
-                        $video_file = ($Topic->video_file != "") ? url("") . "/uploads/topics/" . $Topic->video_file : "";
+                        $video_file = ($Topic->video_file != "") ? url("") . "/public/uploads/topics/" . $Topic->video_file : "";
                     }
 
                     $response_details[] = [
@@ -668,8 +668,8 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         'date' => $Topic->date,
                         'video_type' => $Topic->video_type,
                         'video_file' => $video_file,
-                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/uploads/topics/" . $Topic->photo_file : null,
-                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/uploads/topics/" . $Topic->audio_file : null,
+                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/public/uploads/topics/" . $Topic->photo_file : null,
+                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/public/uploads/topics/" . $Topic->audio_file : null,
                         'icon' => $Topic->icon,
                         'visits' => $Topic->visits,
                         'href' => "topic/" . $Topic->id,
@@ -779,7 +779,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'id' => $category->id,
                             'title' => $category->section->$title_var,
                             'icon' => $category->section->icon,
-                            'photo' => ($category->section->photo != "") ? url("") . "/uploads/sections/" . $category->section->photo : null,
+                            'photo' => ($category->section->photo != "") ? url("") . "/public/uploads/sections/" . $category->section->photo : null,
                             'href' => "topics/cat/" . $category->id
                         ];
                     }
@@ -789,7 +789,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         $Photos[] = [
                             'id' => $photo->id,
                             'title' => $photo->title,
-                            'url' => ($photo->file != "") ? url("") . "/uploads/topics/" . $photo->file : null,
+                            'url' => ($photo->file != "") ? url("") . "/public/uploads/topics/" . $photo->file : null,
                             'href' => "/topic/photo/" . $photo->id
                         ];
                     }
@@ -811,7 +811,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         $Attach_files[] = [
                             'id' => $attachFile->id,
                             'title' => $attachFile->$title_var,
-                            'url' => ($attachFile->file != "") ? url("") . "/uploads/topics/" . $attachFile->file : null,
+                            'url' => ($attachFile->file != "") ? url("") . "/public/uploads/topics/" . $attachFile->file : null,
                             'href' => "/topic/file/" . $attachFile->id
                         ];
                     }
@@ -835,13 +835,13 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'title' => $relatedTopic->topic->$title_var,
                             'date' => $relatedTopic->topic->date,
                             'href' => "topic/" . $relatedTopic->topic->id,
-                            'photo_file' => ($relatedTopic->topic->photo_file != "") ? url("") . "/uploads/topics/" . $relatedTopic->topic->photo_file : null
+                            'photo_file' => ($relatedTopic->topic->photo_file != "") ? url("") . "/public/uploads/topics/" . $relatedTopic->topic->photo_file : null
                         ];
                     }
 
                     $video_file = $Topic->video_file;
                     if ($Topic->video_type == 0) {
-                        $video_file = ($Topic->video_file != "") ? url("") . "/uploads/topics/" . $Topic->video_file : "";
+                        $video_file = ($Topic->video_file != "") ? url("") . "/public/uploads/topics/" . $Topic->video_file : "";
                     }
 
                     $response_details[] = [
@@ -851,8 +851,8 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         'date' => $Topic->date,
                         'video_type' => $Topic->video_type,
                         'video_file' => $video_file,
-                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/uploads/topics/" . $Topic->photo_file : null,
-                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/uploads/topics/" . $Topic->audio_file : null,
+                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/public/uploads/topics/" . $Topic->photo_file : null,
+                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/public/uploads/topics/" . $Topic->audio_file : null,
                         'icon' => $Topic->icon,
                         'visits' => $Topic->visits,
                         'href' => "topic/" . $Topic->id,
@@ -937,7 +937,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         $response_details[] = [
                             'id' => $photo->id,
                             'title' => $photo->title,
-                            'url' => ($photo->file != "") ? url("") . "/uploads/topics/" . $photo->file : null,
+                            'url' => ($photo->file != "") ? url("") . "/public/uploads/topics/" . $photo->file : null,
                             'href' => "/topic/photo/" . $photo->id
                         ];
                     }
@@ -949,7 +949,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'photos_count' => count($response_details),
                     'photos' => $response_details
                 ];
@@ -993,7 +993,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 $response_details[] = [
                     'id' => $Photo->id,
                     'title' => $Photo->title,
-                    'url' => ($Photo->file != "") ? url("") . "/uploads/topics/" . $Photo->file : null
+                    'url' => ($Photo->file != "") ? url("") . "/public/uploads/topics/" . $Photo->file : null
                 ];
 
                 // Response MSG
@@ -1067,7 +1067,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'maps_count' => count($response_details),
                     'maps' => $response_details
                 ];
@@ -1171,7 +1171,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         $response_details[] = [
                             'id' => $attachFile->id,
                             'title' => $attachFile->$title_var,
-                            'url' => ($attachFile->file != "") ? url("") . "/uploads/topics/" . $attachFile->file : null,
+                            'url' => ($attachFile->file != "") ? url("") . "/public/uploads/topics/" . $attachFile->file : null,
                             'href' => "/topic/file/" . $attachFile->id
                         ];
                     }
@@ -1183,7 +1183,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'files_count' => count($response_details),
                     'files' => $response_details
                 ];
@@ -1228,7 +1228,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                 $response_details[] = [
                     'id' => $AttachFile->id,
                     'title' => $AttachFile->$title_var,
-                    'url' => ($AttachFile->file != "") ? url("") . "/uploads/topics/" . $AttachFile->file : null
+                    'url' => ($AttachFile->file != "") ? url("") . "/public/uploads/topics/" . $AttachFile->file : null
                 ];
 
                 // Response MSG
@@ -1304,7 +1304,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'comments_count' => count($response_details),
                     'comments' => $response_details
                 ];
@@ -1409,7 +1409,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'title' => $relatedTopic->topic->$title_var,
                             'date' => $relatedTopic->topic->date,
                             'href' => "topic/" . $relatedTopic->topic->id,
-                            'photo_file' => ($relatedTopic->topic->photo_file != "") ? url("") . "/uploads/topics/" . $relatedTopic->topic->photo_file : null,
+                            'photo_file' => ($relatedTopic->topic->photo_file != "") ? url("") . "/public/uploads/topics/" . $relatedTopic->topic->photo_file : null,
                         ];
                     }
 
@@ -1420,7 +1420,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'related_topics_count' => count($response_details),
                     'related_topics' => $response_details
                 ];
@@ -1506,7 +1506,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                     'topic_id' => $topic_id,
                     'topic_title' => $topic_title,
                     'topic_link' => "topic/" . $topic_id,
-                    'topic_photo' => ($photo_file != "") ? url("") . "/uploads/topics/" . $photo_file : null,
+                    'topic_photo' => ($photo_file != "") ? url("") . "/public/uploads/topics/" . $photo_file : null,
                     'fields_count' => count($response_details),
                     'fields' => $response_details
                 ];
@@ -1578,7 +1578,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                             'id' => $category->id,
                             'title' => $category->section->$title_var,
                             'icon' => $category->section->icon,
-                            'photo' => ($category->section->photo != "") ? url("") . "/uploads/sections/" . $category->section->photo : null,
+                            'photo' => ($category->section->photo != "") ? url("") . "/public/uploads/sections/" . $category->section->photo : null,
                             'href' => "topics/cat/" . $category->id
                         ];
                     }
@@ -1613,7 +1613,7 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
 
                     $video_file = $Topic->video_file;
                     if ($Topic->video_type == 0) {
-                        $video_file = ($Topic->video_file != "") ? url("") . "/uploads/topics/" . $Topic->video_file : "";
+                        $video_file = ($Topic->video_file != "") ? url("") . "/public/uploads/topics/" . $Topic->video_file : "";
                     }
 
                     $response_details[] = [
@@ -1623,8 +1623,8 @@ For more details check <a href='http://smartfordesign.net/smartend/documentation
                         'date' => $Topic->date,
                         'video_type' => $Topic->video_type,
                         'video_file' => $video_file,
-                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/uploads/topics/" . $Topic->photo_file : null,
-                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/uploads/topics/" . $Topic->audio_file : null,
+                        'photo_file' => ($Topic->photo_file != "") ? url("") . "/public/uploads/topics/" . $Topic->photo_file : null,
+                        'audio_file' => ($Topic->audio_file != "") ? url("") . "/public/uploads/topics/" . $Topic->audio_file : null,
                         'icon' => $Topic->icon,
                         'visits' => $Topic->visits,
                         'href' => "topic/" . $Topic->id,

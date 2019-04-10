@@ -139,7 +139,7 @@
 
                                                         @else
                                                             <video width="100%" height="300" controls>
-                                                                <source src="{{ URL::to('uploads/topics/'.$Topic->video_file) }}"
+                                                                <source src="{{ URL::to('public/uploads/topics/'.$Topic->video_file) }}"
                                                                         type="video/mp4">
                                                                 Your browser does not support the video tag.
                                                             </video>
@@ -161,12 +161,12 @@
                                                             </a></h3>
                                                     </div>
                                                     @if($Topic->photo_file !="")
-                                                        <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                                        <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                                              alt="{{ $title }}"/>
                                                     @endif
                                                     <div>
                                                         <audio controls>
-                                                            <source src="{{ URL::to('uploads/topics/'.$Topic->audio_file) }}"
+                                                            <source src="{{ URL::to('public/uploads/topics/'.$Topic->audio_file) }}"
                                                                     type="audio/mpeg">
                                                             Your browser does not support the audio element.
                                                         </audio>
@@ -191,13 +191,13 @@
                                                         <ul class="slides">
                                                             @if($Topic->photo_file !="")
                                                                 <li>
-                                                                    <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                                                    <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                                                          alt="{{ $title }}"/>
                                                                 </li>
                                                             @endif
                                                             @foreach($Topic->photos as $photo)
                                                                 <li>
-                                                                    <img src="{{ URL::to('uploads/topics/'.$photo->file) }}"
+                                                                    <img src="{{ URL::to('public/uploads/topics/'.$photo->file) }}"
                                                                          alt="{{ $photo->title  }}"/>
                                                                 </li>
                                                             @endforeach
@@ -220,7 +220,7 @@
                                                             </a></h3>
                                                     </div>
                                                     @if($Topic->photo_file !="")
-                                                        <img src="{{ URL::to('uploads/topics/'.$Topic->photo_file) }}"
+                                                        <img src="{{ URL::to('public/uploads/topics/'.$Topic->photo_file) }}"
                                                              alt="{{ $title }}"/>
                                                     @endif
                                                 </div>

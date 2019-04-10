@@ -21,7 +21,7 @@ use Validator;
 class WebmailsController extends Controller
 {
 
-    private $uploadPath = "uploads/inbox/";
+    private $uploadPath = "public/uploads/inbox/";
 
     // Define Default Variables
 

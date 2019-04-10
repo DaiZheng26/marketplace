@@ -17,7 +17,7 @@ use Redirect;
 class ContactsController extends Controller
 {
 
-    private $uploadPath = "uploads/contacts/";
+    private $uploadPath = "public/uploads/contacts/";
 
     // Define Default Variables
 
@@ -38,6 +38,7 @@ class ContactsController extends Controller
      */
     public function index($group_id = null)
     {
+         
         //
         // General for all pages
         $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();

@@ -50,7 +50,7 @@
                                                         <i class="fa {{$TextBanner->icon}} fa-3x"></i>
                                                     </div>
                                                 @elseif($TextBanner->$file_var !="")
-                                                    <img src="{{ URL::to('uploads/banners/'.$TextBanner->$file_var) }}"
+                                                    <img src="{{ URL::to('public/uploads/banners/'.$TextBanner->$file_var) }}"
                                                          alt="{{ $TextBanner->$title_var }}"/>
                                                 @endif
                                                 <h4>{!! $TextBanner->$title_var !!}</h4>
@@ -148,7 +148,7 @@
                                         {{ $title }}
                                     </h4>
                                     @if($HomeTopic->photo_file !="")
-                                        <img src="{{ URL::to('uploads/topics/'.$HomeTopic->photo_file) }}"
+                                        <img src="{{ URL::to('public/uploads/topics/'.$HomeTopic->photo_file) }}"
                                              alt="{{ $title }}"/>
                                     @endif
 
@@ -394,13 +394,13 @@
                                                         <div class="item-thumbs">
                                                             <a class="hover-wrap fancybox" data-fancybox-group="gallery"
                                                                title="{{ $title }}"
-                                                               href="{{ URL::to('uploads/topics/'.$photo->file) }}">
+                                                               href="{{ URL::to('public/uploads/topics/'.$photo->file) }}">
                                                                 <span class="overlay-img"></span>
                                                                 <span class="overlay-img-thumb"><i
                                                                             class="fa fa-search-plus"></i></span>
                                                             </a>
                                                             <!-- Thumb Image and Description -->
-                                                            <img src="{{ URL::to('uploads/topics/'.$photo->file) }}"
+                                                            <img src="{{ URL::to('public/uploads/topics/'.$photo->file) }}"
                                                                  alt="{{ $title }}" width="1100px" height="763px">
                                                         </div>
                                                     </div>
@@ -489,7 +489,7 @@
                                         <li class="col-sm-2">
                                             <div>
                                                 <div class="thumbnail">
-                                                    <img src="{{ URL::to('uploads/topics/'.$HomePartner->photo_file) }}"
+                                                    <img src="{{ URL::to('public/uploads/topics/'.$HomePartner->photo_file) }}"
                                                          data-placement="bottom" title="{{ $title }}"
                                                          alt="{{ $title }}">
                                                 </div>

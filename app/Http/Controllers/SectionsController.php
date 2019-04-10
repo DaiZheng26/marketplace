@@ -13,7 +13,7 @@ use Redirect;
 
 class SectionsController extends Controller
 {
-    private $uploadPath = "uploads/sections/";
+    private $uploadPath = "public/uploads/sections/";
 
     // Define Default Variables
 

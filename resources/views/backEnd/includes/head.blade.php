@@ -7,25 +7,25 @@
 <!-- for ios 7 style, multi-resolution icon of 152x152 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
-<link rel="apple-touch-icon" href="{{ URL::to('backEnd/assets/images/logo.png') }}">
+<link rel="apple-touch-icon" href="{{ URL::to('public/backEnd/assets/images/logo.png') }}">
 <meta name="apple-mobile-web-app-title" content="Flatkit">
 <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="{{ URL::to('backEnd/assets/images/logo.png') }}">
+<link rel="shortcut icon" sizes="196x196" href="{{ URL::to('public/backEnd/assets/images/logo.png') }}">
 
 <!-- style -->
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/animate.css/animate.min.css') }}" type="text/css"/>
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/glyphicons/glyphicons.css') }}" type="text/css"/>
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/font-awesome/css/font-awesome.min.css') }}" type="text/css"/>
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/material-design-icons/material-design-icons.css') }}"
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/animate.css/animate.min.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/glyphicons/glyphicons.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/font-awesome/css/font-awesome.min.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/material-design-icons/material-design-icons.css') }}"
       type="text/css"/>
 
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css"/>
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/styles/app.min.css') }}">
-<link rel="stylesheet" href="{{ URL::to('backEnd/assets/styles/font.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css"/>
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/styles/app.min.css') }}">
+<link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/styles/font.css') }}" type="text/css"/>
 
 @if( trans('backLang.direction')=="rtl")
-    <link rel="stylesheet" href="{{ URL::to('backEnd/assets/styles/rtl.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('public/backEnd/assets/styles/rtl.css') }}">
 @endif
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">

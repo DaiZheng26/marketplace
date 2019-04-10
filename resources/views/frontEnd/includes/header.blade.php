@@ -66,9 +66,9 @@
                 <a class="navbar-brand" href="{{ route("Home") }}">
                     @if(Helper::GeneralSiteSettings("style_logo_" . trans('backLang.boxCode')) !="")
                         <img alt=""
-                             src="{{ URL::to('uploads/settings/'.Helper::GeneralSiteSettings("style_logo_" . trans('backLang.boxCode'))) }}">
+                             src="{{ URL::to('public/uploads/settings/'.Helper::GeneralSiteSettings("style_logo_" . trans('backLang.boxCode'))) }}">
                     @else
-                        <img alt="" src="{{ URL::to('uploads/settings/nologo.png') }}">
+                        <img alt="" src="{{ URL::to('public/uploads/settings/nologo.png') }}">
                     @endif
 
                 </a>

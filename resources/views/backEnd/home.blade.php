@@ -581,10 +581,10 @@
                                                class="list-left">
 	                	<span class="w-40 avatar">
                             @if($Contact->photo!="")
-                                <img src="{{ URL::to('uploads/contacts/'.$Contact->photo) }}"
+                                <img src="{{ URL::to('public/uploads/contacts/'.$Contact->photo) }}"
                                      alt="{{ $Contact->first_name }} {{ $Contact->last_name }}">
                             @else
-                                <img src="{{ URL::to('uploads/contacts/profile.jpg') }}"
+                                <img src="{{ URL::to('public/uploads/contacts/profile.jpg') }}"
                                      alt="{{ $Contact->first_name }} {{ $Contact->last_name }}" style="opacity: 0.5">
                             @endif
 	                    </span>

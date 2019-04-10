@@ -1,16 +1,16 @@
 <a href="#" title="{{ trans('frontLang.toTop') }}" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
-<script src="{{ URL::asset('frontEnd/js/jquery.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/jquery.easing.1.3.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/bootstrap.min.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/jquery.fancybox.pack.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/jquery.fancybox-media.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/google-code-prettify/prettify.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/portfolio/jquery.quicksand.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/portfolio/setting.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/jquery.flexslider.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/animate.js') }}"></script>
-<script src="{{ URL::asset('frontEnd/js/custom.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/jquery.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/jquery.fancybox.pack.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/jquery.fancybox-media.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/google-code-prettify/prettify.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/portfolio/jquery.quicksand.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/portfolio/setting.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/jquery.flexslider.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/animate.js') }}"></script>
+<script src="{{ URL::asset('public/frontEnd/js/custom.js') }}"></script>
 
 {{--ajax subscribe to news letter--}}
 @if(Helper::GeneralSiteSettings("style_subscribe"))

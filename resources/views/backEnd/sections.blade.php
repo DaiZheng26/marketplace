@@ -80,7 +80,7 @@
                                 <td>
                                     @if($Section->photo !="")
                                         <div class="pull-right">
-                                            <img src="{{ URL::to('uploads/sections/'.$Section->photo) }}"
+                                            <img src="{{ URL::to('public/uploads/sections/'.$Section->photo) }}"
                                                  style="height: 30px" alt="{{ $title }}">
                                         </div>
                                     @endif
@@ -162,7 +162,7 @@
                                     <td>
                                         @if($subSection->photo !="")
                                             <div class="pull-right">
-                                                <img src="{{ URL::to('uploads/sections/'.$subSection->photo) }}"
+                                                <img src="{{ URL::to('public/uploads/sections/'.$subSection->photo) }}"
                                                      style="height: 30px" alt="{{ $title }}">
                                             </div>
                                         @endif
