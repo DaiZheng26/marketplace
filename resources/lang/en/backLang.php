@@ -26,7 +26,8 @@ return [
     'buyer' => 'Buyer',
     'provider' => 'Provider',
     'category' => 'Category',
-    'subcategory' => 'SubCategory',
+    'subcategory' => 'Sub Category',
+    'subcategories' => 'Sub Categories',
     'field' => 'Field',
     'newCategory' => 'New Category',
     'newmainCategory' => 'New MainCategory',
@@ -35,6 +36,8 @@ return [
     'title' => 'Title',
     'editCategory' => 'Edit Category',
     'deleteCategory' => 'Delete Category',
+    'addsubcategory' => 'Add SubCategory',
+    'newsubcategory' => 'New SubCategory',
  
     // Main Menu & General Titles
     'home' => 'Home',

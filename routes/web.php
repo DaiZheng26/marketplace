@@ -268,6 +268,37 @@ Route::Group(['prefix' => env('BACKEND_PATH')], function () {
     Route::post('/categories/{id}/update', 'CategoriesController@update')->name('categoriesUpdate');
     Route::get('/categories/destroy/{id}', 'CategoriesController@destroy')->name('categoriesDestroy');
     Route::post('/categories/updateAll', 'CategoriesController@updateAll')->name('categoriesUpdateAll');
+
+    //Sub Categories
+    Route::get('/subcategories/{category_id}', 'CategoriesController@subcategory')->name('subCategories');
+    Route::get('/subcategories/create/{category_id}', 'CategoriesController@subcreate')->name('subcategoriesCreate'); 
+    Route::post('/subcategories/store', 'CategoriesController@substore')->name('subcategoriesStore'); 
+    
+    Route::get('/subcategories/{id}{category_id}/edit', 'CategoriesController@subedit')->name('subcategoriesEdit');
+    Route::post('/subcategories/{id}{category_id}/update', 'CategoriesController@subupdate')->name('subcategoriesUpdate');
+
+    Route::get('/subcategories/destroy/{id}{category_id}', 'CategoriesController@subdestroy')->name('subcategoriesDestroy');
+
+     //Ssub Categories
+     Route::get('/ssubcategories/{category_id}', 'CategoriesController@ssubcategory')->name('ssubCategories');
+     Route::get('/ssubcategories/create/{category_id}', 'CategoriesController@ssubcreate')->name('ssubcategoriesCreate'); 
+     Route::post('/ssubcategories/store', 'CategoriesController@ssubstore')->name('ssubcategoriesStore'); 
+     
+     Route::get('/ssubcategories/{id}{category_id}/edit', 'CategoriesController@ssubedit')->name('ssubcategoriesEdit');
+     Route::post('/ssubcategories/{id}{category_id}/update', 'CategoriesController@ssubupdate')->name('ssubcategoriesUpdate');
+ 
+     Route::get('/ssubcategories/destroy/{id}{category_id}', 'CategoriesController@ssubdestroy')->name('ssubcategoriesDestroy');
+
+     //Sssub Categories
+     Route::get('/sssubcategories/{category_id}', 'CategoriesController@sssubcategory')->name('sssubCategories');
+     Route::get('/sssubcategories/create/{category_id}', 'CategoriesController@sssubcreate')->name('sssubcategoriesCreate'); 
+     Route::post('/sssubcategories/store', 'CategoriesController@sssubstore')->name('sssubcategoriesStore'); 
+     
+     Route::get('/sssubcategories/{id}{category_id}/edit', 'CategoriesController@sssubedit')->name('sssubcategoriesEdit');
+     Route::post('/sssubcategories/{id}{category_id}/update', 'CategoriesController@sssubupdate')->name('sssubcategoriesUpdate');
+ 
+     Route::get('/sssubcategories/destroy/{id}{category_id}', 'CategoriesController@sssubdestroy')->name('sssubcategoriesDestroy');
+  
     // SubCategory
     Route::get('/subcategories', function(){
         $categories = Category::all();

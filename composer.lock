@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b8e4849a940a2964e0d01ab3dc5e66c",
+    "content-hash": "089131a0124577bc0c810dae46556431",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -51,6 +51,73 @@
                 "recaptcha"
             ],
             "time": "2017-01-30T19:35:26+00:00"
+        },
+        {
+            "name": "atayahmet/laravel-nestable",
+            "version": "v0.8.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atayahmet/laravel-nestable.git",
+                "reference": "c4997757c0234d705ca079939acd50453741cf42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atayahmet/laravel-nestable/zipball/c4997757c0234d705ca079939acd50453741cf42",
+                "reference": "c4997757c0234d705ca079939acd50453741cf42",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "illuminate/support": "5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+                "php": ">=5.5.5"
+            },
+            "require-dev": {
+                "orchestra/database": "~3.1",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nestable\\NestableServiceProvider"
+                    ],
+                    "aliases": {
+                        "Nestable": "Nestable\\Facades\\NestableService"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nestable\\": "src/",
+                    "Nestable\\Tests\\": "tests/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmet ATAY",
+                    "email": "ahmet.atay@hotmail.com",
+                    "homepage": "http://www.atayahmet.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 nested categories library",
+            "homepage": "https://github.com/atayahmet/nestable",
+            "keywords": [
+                "category",
+                "laravel",
+                "nestable",
+                "nested",
+                "nestedset"
+            ],
+            "time": "2019-03-20T19:24:04+00:00"
         },
         {
             "name": "barryvdh/laravel-cors",
@@ -2453,12 +2520,12 @@
             "version": "0.9.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
                 "reference": "1e5e2ffdc4d71d7358ed58a6fdd30a4a0c506855",
                 "shasum": ""
             },

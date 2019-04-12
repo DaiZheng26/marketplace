@@ -45,21 +45,12 @@ $urlAfterRoot = substr($fullPagePath, strpos($fullPagePath, env('BACKEND_PATH'))
                     
                     @if(@Auth::user()->permissionsGroup->webmaster_status)
                     <li>
-                        <a>
-                            <span class="nav-caret"><i class="fa fa-caret-down"></i></span>
+                        <a href="{{route('categories')}}">
+                            <!-- <span class="nav-caret"><i class="fa fa-caret-down"></i></span> -->
                             <span class="nav-icon"><i class="fa fa-list-alt"></i></span>
                             <span class="nav-text">{{ trans('backLang.category') }}</span>
                         </a>
-                        <ul class="nav-sub">
-                            <li>
-                            <a href="{{route('categories')}}">
-                            
-                            <span class="nav-text">{{ trans('backLang.maincategory') }}</span>
-                        </a>
-                            </li>
-                            <li><a href="{{route('subcategories')}}">Subcategory</a></li>
-                            <li><a href="">Field</a></li>
-                        </ul>
+                        
                     </li>
                     @endif
 

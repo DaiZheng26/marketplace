@@ -6,6 +6,9 @@ use App\Http\Requests;
 use App\Permissions;
 use App\User;
 use App\Category;
+use App\Subcategory;
+use App\Ssubcategory;
+use App\Sssubcategory;
 use App\WebmasterSection;
 use Auth;
 use File;
@@ -43,22 +46,19 @@ class CategoriesController extends Controller
         // General END
 
         if (@Auth::user()->permissionsGroup->view_status) {
-            $Categories = Category::orderby('id',
+            $Categories = Category::orderby('name',
                 'asc')->paginate(env('BACKEND_PAGINATION'));
             $Permissions = Permissions::where('created_by', '=', Auth::user()->id)->orderby('id', 'asc')->get();
         } else {
-            $Categories = Category::orderby('id', 'asc')->paginate(env('BACKEND_PAGINATION'));
+            $Categories = Category::orderby('name', 'asc')->paginate(env('BACKEND_PAGINATION'));
+            // $categories = Category::nested()->get();
+
             $Permissions = Permissions::orderby('id', 'asc')->get();
         }
       
         return view("backEnd.category", compact("Categories", "Permissions", "GeneralWebmasterSections"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -68,6 +68,317 @@ class CategoriesController extends Controller
         $Permissions = Permissions::orderby('id', 'asc')->get();
 
         return view("backEnd.categories.create", compact("GeneralWebmasterSections", "Permissions"));
+    }
+
+    public function subcategory($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+         
+        $Categories = Subcategory::where('category_id', '=', $category_id)->orderby('name','asc')->paginate(env('BACKEND_PAGINATION'));
+       
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.subcategory", compact("Categories", "Permissions","category_id", "GeneralWebmasterSections"));
+
+    }
+    public function subcreate($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.subcategories.create", compact("GeneralWebmasterSections","category_id", "Permissions"));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+  
+
+    public function substore(Request $request)
+    {
+       
+        $this->validate($request, [
+             'category' => 'required',    
+        ]);
+
+
+        // Start of Upload Files
+        
+
+        $Subcategory = new Subcategory;
+        $Subcategory->name = $request->category;
+        $Subcategory->category_id = $request->category_id;
+        $Subcategory->save();
+
+        return redirect()->route("subCategories",["category_id"=>$request->category_id]);
+    }
+
+    public function subedit($id,$category_id)
+    {
+     
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+
+        $Categories = Subcategory::find($id);
+ 
+        if (count($Categories) > 0) {
+            return view("backEnd.subcategories.edit", compact("Categories","category_id", "GeneralWebmasterSections"));
+        } else {
+            return redirect()->route("subCategories",["category_id"=>$category_id]);
+
+        }
+    }
+
+    public function subupdate(Request $request, $id)
+    {
+        //
+        $Subcategory = Subcategory::find($id);
+        if (count($Subcategory) > 0) {
+
+
+            $this->validate($request, [
+                 'category' => 'required',
+             ]);
+
+            // Start of Upload Files
+           
+            // End of Upload Files
+
+            //if ($id != 1) {
+                $Subcategory->name = $request->category;
+                  
+             //}
+             
+            
+            
+            $Subcategory->save();
+            return redirect()->action('CategoriesController@subcategory', $request->category_id)->with('doneMessage', trans('backLang.saveDone'));
+        } else {
+            return redirect()->action('CategoriesController@index');
+        }
+    }
+
+    public function subdestroy($id, $category_id)
+    {
+        //
+       
+        $Subategory = Subcategory::find($id);
+        
+        if (count($Subategory) > 0 && $id != 1) {
+           
+
+            $Subategory->delete();
+            return redirect()->action('CategoriesController@subcategory', $category_id)->with('doneMessage', trans('backLang.deleteDone'));
+        } else {
+            return redirect()->action('CategoriesController@index');
+        }
+    }
+
+    //ssub category 
+
+    public function ssubcategory($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+         
+        $Categories = Ssubcategory::where('category_id', '=', $category_id)->orderby('name','asc')->paginate(env('BACKEND_PAGINATION'));
+       
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.ssubcategory", compact("Categories", "Permissions","category_id", "GeneralWebmasterSections"));
+
+    }
+    public function ssubcreate($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.ssubcategories.create", compact("GeneralWebmasterSections","category_id", "Permissions"));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+  
+
+    public function ssubstore(Request $request)
+    {
+       
+        $this->validate($request, [
+             'category' => 'required',    
+        ]);
+
+
+        // Start of Upload Files
+        
+
+        $Subcategory = new Ssubcategory;
+        $Subcategory->name = $request->category;
+        $Subcategory->category_id = $request->category_id;
+        $Subcategory->save();
+
+        return redirect()->route("ssubCategories",["category_id"=>$request->category_id]);
+    }
+
+    public function ssubedit($id,$category_id)
+    {
+     
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+
+        $Categories = Ssubcategory::find($id);
+ 
+        if (count($Categories) > 0) {
+            return view("backEnd.ssubcategories.edit", compact("Categories","category_id", "GeneralWebmasterSections"));
+        } else {
+            return redirect()->route("subCategories",["category_id"=>$category_id]);
+
+        }
+    }
+
+    public function ssubupdate(Request $request, $id)
+    {
+        //
+        $Subcategory = Ssubcategory::find($id);
+        if (count($Subcategory) > 0) {
+
+
+            $this->validate($request, [
+                 'category' => 'required',
+             ]);
+
+            // Start of Upload Files
+           
+            // End of Upload Files
+
+            //if ($id != 1) {
+                $Subcategory->name = $request->category;
+                  
+             //}
+             
+            
+            
+            $Subcategory->save();
+            return redirect()->action('CategoriesController@ssubcategory', $request->category_id)->with('doneMessage', trans('backLang.saveDone'));
+        } else {
+            return redirect()->action('CategoriesController@index');
+        }
+    }
+
+    public function ssubdestroy($id, $category_id)
+    {
+        //
+       
+        $Subategory = Ssubcategory::find($id);
+        
+        if (count($Subategory) > 0 && $id != 1) {
+           
+
+            $Subategory->delete();
+            return redirect()->action('CategoriesController@ssubcategory', $category_id)->with('doneMessage', trans('backLang.deleteDone'));
+        } else {
+            return redirect()->action('CategoriesController@index');
+        }
+    }
+
+
+    //sssub category
+
+    public function sssubcategory($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+         
+        $Categories = Sssubcategory::where('category_id', '=', $category_id)->orderby('name','asc')->paginate(env('BACKEND_PAGINATION'));
+       
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.sssubcategory", compact("Categories", "Permissions","category_id", "GeneralWebmasterSections"));
+
+    }
+    public function sssubcreate($category_id){
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+        $Permissions = Permissions::orderby('id', 'asc')->get();
+        return view("backEnd.sssubcategories.create", compact("GeneralWebmasterSections","category_id", "Permissions"));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+  
+
+    public function sssubstore(Request $request)
+    {
+       
+        $this->validate($request, [
+             'category' => 'required',    
+        ]);
+
+
+        // Start of Upload Files
+        
+
+        $Subcategory = new Sssubcategory;
+        $Subcategory->name = $request->category;
+        $Subcategory->category_id = $request->category_id;
+        $Subcategory->save();
+
+        return redirect()->route("sssubCategories",["category_id"=>$request->category_id]);
+    }
+
+    public function sssubedit($id,$category_id)
+    {
+     
+        $GeneralWebmasterSections = WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
+
+        $Categories = Sssubcategory::find($id);
+ 
+        if (count($Categories) > 0) {
+            return view("backEnd.sssubcategories.edit", compact("Categories","category_id", "GeneralWebmasterSections"));
+        } else {
+            return redirect()->route("subCategories",["category_id"=>$category_id]);
+
+        }
+    }
+
+    public function sssubupdate(Request $request, $id)
+    {
+        //
+        $Subcategory = Sssubcategory::find($id);
+        if (count($Subcategory) > 0) {
+
+
+            $this->validate($request, [
+                 'category' => 'required',
+             ]);
+
+            // Start of Upload Files
+           
+            // End of Upload Files
+
+            //if ($id != 1) {
+                $Subcategory->name = $request->category;
+                  
+             //}
+             
+            
+            
+            $Subcategory->save();
+            return redirect()->action('CategoriesController@sssubcategory', $request->category_id)->with('doneMessage', trans('backLang.saveDone'));
+        } else {
+            return redirect()->action('CategoriesController@index');
+        }
+    }
+
+    public function sssubdestroy($id, $category_id)
+    {
+        //
+       
+        $Subategory = Sssubcategory::find($id);
+        
+        if (count($Subategory) > 0 && $id != 1) {
+           
+
+            $Subategory->delete();
+            return redirect()->action('CategoriesController@sssubcategory', $category_id)->with('doneMessage', trans('backLang.deleteDone'));
+        } else {
+            return redirect()->action('CategoriesController@sssubcategory', $category_id)->with('doneMessage', trans('backLang.deleteDone'));
+        }
     }
 
     /**
@@ -97,7 +408,7 @@ class CategoriesController extends Controller
         // End of Upload Files
 
         $Category = new Category;
-        $Category->category = $request->category;
+        $Category->name = $request->category;
         $Category->photo = $fileFinalName_ar;
         $Category->save();
 
@@ -166,7 +477,7 @@ class CategoriesController extends Controller
             // End of Upload Files
 
             //if ($id != 1) {
-                $Category->category = $request->category;
+                $Category->name = $request->category;
                   
              //}
             if ($request->photo_delete == 1) {

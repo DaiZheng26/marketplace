@@ -1,7 +1,9 @@
 @extends('backEnd.layout')
 
 @section('content')
-   
+<?php
+use App\Ssubcategory;
+?>
     <?php
           $uploadPath = "uploads/categories/";
     ?>
@@ -9,23 +11,32 @@
         <div class="box">
 
             <div class="box-header dker">
-                <h3>{{ trans('backLang.maincategory') }}</h3>
+                <h3>{{ Ssubcategory::find($category_id)->name }}</h3>
                 <small>
                     <a href="{{ route('adminHome') }}">{{ trans('backLang.home') }}</a> /
-                    <a href="">{{ trans('backLang.settings') }}</a>
+                    
+                    <a href="">{{ trans('backLang.subcategory') }}</a> /
+                    <a href="">{{ trans('backLang.subcategory') }}</a> /
+                    <a href="">{{ trans('backLang.subcategory') }}</a>
                 </small>
             </div>
 
             @if($Categories->total() >0)
                 @if(@Auth::user()->permissionsGroup->webmaster_status)
                     <div class="row p-a pull-right" style="margin-top: -70px;">
-                        <div class="col-sm-6">
-                            <a class="btn btn-fw primary" href="{{route("categoriesCreate")}}">
+                        <div class="col-sm-12">
+                            <a class="btn btn-fw primary" href="{{route("sssubcategoriesCreate",["category_id"=>$category_id])}}">
+                                <i class="fa fa-plus"></i>
+                                &nbsp; {{ trans('backLang.addsubcategory') }}
+                            </a>
+                            <a class="btn btn-fw primary" href="{{route("categories")}}">
                                 <i class="fa fa-list-alt"></i>
-                                &nbsp; {{ trans('backLang.newmainCategory') }}
+                                &nbsp; {{ trans('backLang.maincategory') }}
                             </a>
                         </div>
                     </div>
+                     
+                    
                 @endif
             @endif
             <!-- @if($Categories->total() >0)
@@ -56,9 +67,9 @@
                             <br>
                             @if(@Auth::user()->permissionsGroup->webmaster_status)
                                 <br>
-                                <a class="btn btn-fw primary" href="{{route("categoriesCreate")}}">
-                                    <i class="material-icons">&#xe7fe;</i>
-                                    &nbsp; {{ trans('backLang.newmainCategory') }}
+                                <a class="btn btn-fw primary" href="{{route("sssubcategoriesCreate",["category_id"=>$category_id])}}">
+                                    <i class="fa fa-plus"></i>
+                                    &nbsp; {{ trans('backLang.addsubcategory') }}
                                 </a>
                             @endif
                         </div>
@@ -68,7 +79,7 @@
 
             @if($Categories->total() > 0)
                 {{Form::open(['route'=>'categoriesUpdateAll','method'=>'post'])}}
-                <div class="table-responsive" style="width:100%">
+                <div class="table-responsive" style="width:50%">
                     <table class="table table-striped  b-t">
                         <thead>
                         <tr>
@@ -78,7 +89,7 @@
                                 </label>
                             </th>
                             <th>No</th>
-                            <th>{{ trans('backLang.categoryimage')}}</th>
+                            
                             <th>{{ trans('backLang.title') }}</th>
                             <th class="text-center" style="width:200px;">{{ trans('backLang.options') }}</th>
                         </tr>
@@ -99,17 +110,14 @@
                                 <td>
                                     {!! $i  !!}
                                 </td>
+                                
                                 <td>
-                                    <img src="{{'/'.$uploadPath.'/'.$Category->photo}}" alt="" width="50px">
-                                </td>
-                                <td>
-                                    <a href="{{ route("subCategories",["category_id"=>$Category->id]) }}"
+                                    <a href=" "
                                     <small>{!! $Category->name !!}</small>
                                 </td>
                                 <td class="text-center">
-                                    
                                     <a class="btn btn-sm success"
-                                       href="{{ route("categoriesEdit",["id"=>$Category->id]) }}">
+                                       href="{{ route("ssubcategoriesEdit",["id"=>$Category->id,"$category_id"]) }}">
                                         <small><i class="material-icons">&#xe3c9;</i> {{ trans('backLang.edit') }}
                                         </small>
                                     </a>
@@ -124,13 +132,13 @@
 
 
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <a class="btn btn-sm primary"
-                                       href="{{ route("subCategories",["category_id"=>$Category->id]) }}">
+                                       href="{{ route("sssubCategories",["category_id"=>$Category->id]) }}">
                                         <small><i class="fa fa-plus"></i> {{ trans('backLang.addsubcategory') }}
                                         </small>
                                     </a>
-                                </td>
+                                </td> -->
                             </tr>
                             <!-- .modal -->
                             <div id="m-{{ $Category->id }}" class="modal fade" data-backdrop="true">
@@ -149,7 +157,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn dark-white p-x-md"
                                                     data-dismiss="modal">{{ trans('backLang.no') }}</button>
-                                            <a href="{{ route("categoriesDestroy",["id"=>$Category->id]) }}"
+                                            <a href="{{ route("sssubcategoriesDestroy",["id"=>$Category->id,"$category_id"]) }}"
                                                class="btn danger p-x-md">{{ trans('backLang.yes') }}</a>
                                         </div>
                                     </div><!-- /.modal-content -->

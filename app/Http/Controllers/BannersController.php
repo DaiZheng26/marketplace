@@ -16,7 +16,7 @@ use Redirect;
 class BannersController extends Controller
 {
 
-    private $uploadPath = "uploads/banners/";
+    private $uploadPath = "public/uploads/banners/";
 
     // Define Default Variables
 
